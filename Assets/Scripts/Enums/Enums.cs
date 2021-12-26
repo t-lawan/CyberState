@@ -67,9 +67,10 @@ public enum PartVariantColour
 
 public enum SceneName
 {
-    Scene1_Farm,
-    Scene2_Field,
-    Scene3_Cabin,
+    Scene_Bush,
+    Scene_Astral,
+    Scene_Underground,
+    Scene_Simulator
 }
 
 public enum Season
@@ -145,3 +146,19 @@ public enum ItemType
 
 }
 
+public enum Facing
+{
+    none,
+    front,
+    back,
+    right
+}
+
+public enum Weather
+{
+    dry,
+    raining,
+    snowing,
+    none,
+    count
+}

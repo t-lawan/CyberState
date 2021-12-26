@@ -7,7 +7,7 @@ public class Player : SingletonMonoBehaviour<Player>
 {
     private WaitForSeconds afterUseToolAnimationPause;
     private WaitForSeconds afterLiftToolAnimationPause;
-   // private AnimationOverrides animationOverrides;
+    private AnimationOverrides animationOverrides;
 
     //    private GridCursor gridCursor;
     // Movement Parameters
@@ -49,14 +49,14 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private Direction direction;
 
-    //    private List<CharacterAttribute> characterAttributeCustomisationList;
+    private List<CharacterAttribute> characterAttributeCustomisationList;
     private float movementSpeed;
 
     //    [Tooltip("Should be populated in the prefav with the equipped item sprite renderer")]
-    //    [SerializeField] private SpriteRenderer equippedItemSpriteRenderer = null;
+    [SerializeField] private SpriteRenderer equippedItemSpriteRenderer = null;
 
-    //    private CharacterAttribute armsCharacterAttribute;
-    //    private CharacterAttribute toolCharacterAttribute;
+    private CharacterAttribute armsCharacterAttribute;
+    private CharacterAttribute toolCharacterAttribute;
 
     private bool _playerInputIsDisabled = false;
     public bool PlayerInputIsDisabled { get => _playerInputIsDisabled; set => _playerInputIsDisabled = value; }
@@ -67,12 +67,12 @@ public class Player : SingletonMonoBehaviour<Player>
 
         rigidBody2D = GetComponent<Rigidbody2D>();
 
-        //animationOverrides = GetComponentInChildren<AnimationOverrides>();
+        animationOverrides = GetComponentInChildren<AnimationOverrides>();
 
-        //armsCharacterAttribute = new CharacterAttribute(CharacterPartAnimator.arms, PartVariantColour.none, PartVariantType.none);
+        armsCharacterAttribute = new CharacterAttribute(CharacterPartAnimator.arms, PartVariantColour.none, PartVariantType.none);
 
-        //characterAttributeCustomisationList = new List<CharacterAttribute>();
-        //mainCamera = Camera.main;
+        characterAttributeCustomisationList = new List<CharacterAttribute>();
+        mainCamera = Camera.main;
     }
 
     //    private void Start()
@@ -432,22 +432,22 @@ public class Player : SingletonMonoBehaviour<Player>
     //        }
     //    }
 
-    //    public void EnablePlayerInput()
-    //    {
-    //        PlayerInputIsDisabled = false;
-    //    }
+    public void EnablePlayerInput()
+    {
+        PlayerInputIsDisabled = false;
+    }
 
-    //    public void DisablePlayerInput()
-    //    {
-    //        PlayerInputIsDisabled = true;
-    //    }
+    public void DisablePlayerInput()
+    {
+        PlayerInputIsDisabled = true;
+    }
 
-    //    public void DisablePlayerInputAndResetMovement()
-    //    {
-    //        DisablePlayerInput();
-    //        ResetMovement();
-    //        SendMovementEventToListeners();
-    //    }
+    public void DisablePlayerInputAndResetMovement()
+    {
+        DisablePlayerInput();
+        ResetMovement();
+        SendMovementEventToListeners();
+    }
 
     //    private void PlayerTestInput()
     //    {
@@ -484,47 +484,47 @@ isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
 false, false, false, false);
     }
 
-    //    public void ClearCarriedItem()
-    //    {
-    //        equippedItemSpriteRenderer.sprite = null;
-    //        equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+    public void ClearCarriedItem()
+    {
+        equippedItemSpriteRenderer.sprite = null;
+        equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
 
-    //        armsCharacterAttribute.partVariantType = PartVariantType.none;
-    //        characterAttributeCustomisationList.Clear();
-    //        characterAttributeCustomisationList.Add(armsCharacterAttribute);
-    //        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+        armsCharacterAttribute.partVariantType = PartVariantType.none;
+        characterAttributeCustomisationList.Clear();
+        characterAttributeCustomisationList.Add(armsCharacterAttribute);
+        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
 
-    //        isCarrying = false;
+        isCarrying = false;
 
 
-    //    }
+    }
 
-    //    public void ShowCarriedItem(int itemCode)
-    //    {
-    //        ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(itemCode);
-    //        if (itemDetails != null)
-    //        {
-    //            equippedItemSpriteRenderer.sprite = itemDetails.itemSprite;
-    //            equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+    public void ShowCarriedItem(int itemCode)
+    {
+        ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(itemCode);
+        if (itemDetails != null)
+        {
+            equippedItemSpriteRenderer.sprite = itemDetails.itemSprite;
+            equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 
-    //            armsCharacterAttribute.partVariantType = PartVariantType.carry;
-    //            characterAttributeCustomisationList.Clear();
-    //            characterAttributeCustomisationList.Add(armsCharacterAttribute);
-    //            animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+            armsCharacterAttribute.partVariantType = PartVariantType.carry;
+            characterAttributeCustomisationList.Clear();
+            characterAttributeCustomisationList.Add(armsCharacterAttribute);
+            animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
 
-    //            isCarrying = true;
-    //        }
-    //    }
+            isCarrying = true;
+        }
+    }
 
-    //public Vector3 GetPlayerViewportPosition()
-    //{
-    //    return mainCamera.WorldToViewportPoint(transform.position);
-    //}
+    public Vector3 GetPlayerViewportPosition()
+    {
+        return mainCamera.WorldToViewportPoint(transform.position);
+    }
 
-    //public Vector3 GetPlayerCenterPosition()
-    //{
-    //    return new Vector3(transform.position.x, transform.position.y + Settings.playerCentreYOffset, transform.position.z);
-    //}
+    public Vector3 GetPlayerCenterPosition()
+    {
+        return new Vector3(transform.position.x, transform.position.y + Settings.playerCentreYOffset, transform.position.z);
+    }
 
 
 

@@ -103,8 +103,7 @@ MonoBehaviour:
   - itemCode: 10007
     itemType: 0
     itemDescription: Sentient Plant Egg
-    itemSprite: {fileID: -8253152842590474038, guid: 41dae72b559da4333b45720b0b1e304f,
-      type: 3}
+    itemSprite: {fileID: 21300000, guid: 3bd4f721cce0d448086247c259325149, type: 3}
     itemLongDescription: This is an egg for the sentient plant
     itemUseGridRadius: 0
     itemUseRadius: 0
@@ -116,7 +115,7 @@ MonoBehaviour:
   - itemCode: 10008
     itemType: 1
     itemDescription: Sentient Plant
-    itemSprite: {fileID: -8253152842590474038, guid: 41dae72b559da4333b45720b0b1e304f,
+    itemSprite: {fileID: -1062230929025190751, guid: 4a7c257413c0744a8bbfbd94db7984d6,
       type: 3}
     itemLongDescription: This is a magical sentient olant
     itemUseGridRadius: 0

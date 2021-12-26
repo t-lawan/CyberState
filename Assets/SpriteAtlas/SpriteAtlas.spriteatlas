@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 1559498
+    totalSpriteSurfaceArea: 4139348
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -112,6 +112,32 @@ SpriteAtlas:
   - {fileID: 4005202913230342895, guid: 2d0dfd935517f7049a9ec156af517511, type: 3}
   - {fileID: 5613540868099651934, guid: 2d0dfd935517f7049a9ec156af517511, type: 3}
   - {fileID: -2514537956183521370, guid: 2d0dfd935517f7049a9ec156af517511, type: 3}
+  - {fileID: 4506316268045044790, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -8854843215718498592, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -6566305492015415773, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -3298789874158401059, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -1575856770125968647, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 8893269817476506140, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -5071245021276135609, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -1965621437519200573, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 1264904555032929437, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 8683020101925888318, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 459675510684602744, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -647390843914310831, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 299883645871659563, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 499752973364580962, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 8413491833489342028, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 7616480881607169154, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 2594587799526678831, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 7846776917031415338, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -1473942548835528247, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -4904680858036849998, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 685903529183361587, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 5243311549634393733, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -3838780695284895436, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -491879939156019266, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: -5457115376299555003, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
+  - {fileID: 5743144030427693339, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
   - {fileID: -5023657787481963876, guid: 4a7c257413c0744a8bbfbd94db7984d6, type: 3}
   - {fileID: -2770255423902301826, guid: 4a7c257413c0744a8bbfbd94db7984d6, type: 3}
   - {fileID: 7959154704767587292, guid: 4a7c257413c0744a8bbfbd94db7984d6, type: 3}
@@ -1728,6 +1754,32 @@ SpriteAtlas:
   - Butch_Portrait_0
   - Butch_Portrait_1
   - Butch_Portrait_2
+  - oretolubricant-Sheet_18
+  - oretolubricant-Sheet_19
+  - oretolubricant-Sheet_9
+  - oretolubricant-Sheet_8
+  - oretolubricant-Sheet_5
+  - oretolubricant-Sheet_4
+  - oretolubricant-Sheet_7
+  - oretolubricant-Sheet_6
+  - oretolubricant-Sheet_1
+  - oretolubricant-Sheet_0
+  - oretolubricant-Sheet_3
+  - oretolubricant-Sheet_2
+  - oretolubricant-Sheet_25
+  - oretolubricant-Sheet_24
+  - oretolubricant-Sheet_21
+  - oretolubricant-Sheet_20
+  - oretolubricant-Sheet_23
+  - oretolubricant-Sheet_22
+  - oretolubricant-Sheet_14
+  - oretolubricant-Sheet_15
+  - oretolubricant-Sheet_16
+  - oretolubricant-Sheet_17
+  - oretolubricant-Sheet_10
+  - oretolubricant-Sheet_11
+  - oretolubricant-Sheet_12
+  - oretolubricant-Sheet_13
   - plant_0_1-Sheet_4
   - plant_0_1-Sheet_5
   - plant_0_1-Sheet_6

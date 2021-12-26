@@ -33,7 +33,7 @@ public class MovementAnimationParameterControl : MonoBehaviour
         animator.SetFloat(Settings.yInput, yInput);
         animator.SetBool(Settings.isWalking, isWalking);
         animator.SetBool(Settings.isRunning, isRunning);
-        animator.SetInteger(Settings.toolEffect, (int)toolEffect);
+        animator.SetInteger(Settings.toolEffect, (int) toolEffect);
 
         if (isUsingToolRight)
             animator.SetTrigger(Settings.isUsingToolRight);
