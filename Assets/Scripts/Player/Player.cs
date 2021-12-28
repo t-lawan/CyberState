@@ -486,13 +486,13 @@ false, false, false, false);
 
     public void ClearCarriedItem()
     {
-        equippedItemSpriteRenderer.sprite = null;
-        equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+        //equippedItemSpriteRenderer.sprite = null;
+        //equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
 
-        armsCharacterAttribute.partVariantType = PartVariantType.none;
-        characterAttributeCustomisationList.Clear();
-        characterAttributeCustomisationList.Add(armsCharacterAttribute);
-        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+        //armsCharacterAttribute.partVariantType = PartVariantType.none;
+        //characterAttributeCustomisationList.Clear();
+        //characterAttributeCustomisationList.Add(armsCharacterAttribute);
+        //animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
 
         isCarrying = false;
 
@@ -504,13 +504,13 @@ false, false, false, false);
         ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(itemCode);
         if (itemDetails != null)
         {
-            equippedItemSpriteRenderer.sprite = itemDetails.itemSprite;
-            equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+            //equippedItemSpriteRenderer.sprite = itemDetails.itemSprite;
+            //equippedItemSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
 
-            armsCharacterAttribute.partVariantType = PartVariantType.carry;
-            characterAttributeCustomisationList.Clear();
-            characterAttributeCustomisationList.Add(armsCharacterAttribute);
-            animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+            //armsCharacterAttribute.partVariantType = PartVariantType.carry;
+            //characterAttributeCustomisationList.Clear();
+            //characterAttributeCustomisationList.Add(armsCharacterAttribute);
+            //animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
 
             isCarrying = true;
         }

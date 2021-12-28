@@ -65,10 +65,10 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     private void ClearCursors()
     {
-        gridCursor.DisableCursor();
-        cursor.DisableCursor();
-        gridCursor.SelectedItemType = ItemType.none;
-        cursor.SelectedItemType = ItemType.none;
+        //gridCursor.DisableCursor();
+        //cursor.DisableCursor();
+        //gridCursor.SelectedItemType = ItemType.none;
+        //cursor.SelectedItemType = ItemType.none;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -224,27 +224,27 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         if (itemQuantity != 0)
         {
-            //inventoryBar.inventoryTextBoxGameobject = Instantiate(inventoryTextBoxPrefab, transform.position, Quaternion.identity);
-            //inventoryBar.inventoryTextBoxGameobject.transform.SetParent(parentCanvas.transform, false);
+            inventoryBar.inventoryTextBoxGameobject = Instantiate(inventoryTextBoxPrefab, transform.position, Quaternion.identity);
+            inventoryBar.inventoryTextBoxGameobject.transform.SetParent(parentCanvas.transform, false);
 
-            //UIInventoryTextBox inventoryTextBox = inventoryBar.inventoryTextBoxGameobject.GetComponent<UIInventoryTextBox>();
+            UIInventoryTextBox inventoryTextBox = inventoryBar.inventoryTextBoxGameobject.GetComponent<UIInventoryTextBox>();
 
             string itemTypeDescription = InventoryManager.Instance.GetItemTypeDescription(itemDetails.itemType);
 
-            //inventoryTextBox.SetTextBoxText(itemDetails.itemDescription, itemTypeDescription, "", itemDetails.itemLongDescription, "", "");
+            inventoryTextBox.SetTextBoxText(itemDetails.itemDescription, itemTypeDescription, "", itemDetails.itemLongDescription, "", "");
 
-            //if (inventoryBar.IsInventoryBarPositionBottom)
-            //{
-            //    inventoryBar.inventoryTextBoxGameobject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0f);
-            //    inventoryBar.inventoryTextBoxGameobject.transform.position = new Vector3(transform.position.x, transform.position.y + 50f, transform.position.z);
+            if (inventoryBar.IsInventoryBarPositionBottom)
+            {
+                inventoryBar.inventoryTextBoxGameobject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0f);
+                inventoryBar.inventoryTextBoxGameobject.transform.position = new Vector3(transform.position.x, transform.position.y + 50f, transform.position.z);
 
-            //}
-            //else
-            //{
-            //    inventoryBar.inventoryTextBoxGameobject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 1f);
-            //    inventoryBar.inventoryTextBoxGameobject.transform.position = new Vector3(transform.position.x, transform.position.y - 50f, transform.position.z);
+            }
+            else
+            {
+                inventoryBar.inventoryTextBoxGameobject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 1f);
+                inventoryBar.inventoryTextBoxGameobject.transform.position = new Vector3(transform.position.x, transform.position.y - 50f, transform.position.z);
 
-            //}
+            }
         }
     }
 

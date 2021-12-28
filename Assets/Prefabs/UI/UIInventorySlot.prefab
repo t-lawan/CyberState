@@ -106,7 +106,8 @@ MonoBehaviour:
   inventorySlotImage: {fileID: 1452080743274085136}
   textMeshProGUI: {fileID: 1452080744279360138}
   inventoryBar: {fileID: 0}
-  inventoryTextBoxPrefab: {fileID: 0}
+  inventoryTextBoxPrefab: {fileID: 5428538952570141403, guid: 63ba9624ba1034fbbb45b9d25409bea5,
+    type: 3}
   isSelected: 0
   itemPrefab: {fileID: 2315549344951914638, guid: 042b37da235c0424ab81ab7bd5ff5787,
     type: 3}
