@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 4037972
+    totalSpriteSurfaceArea: 9055572
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -41,6 +41,7 @@ SpriteAtlas:
   - {fileID: 21300002, guid: 3fdea510f6c395642bec63c0e92feb05, type: 3}
   - {fileID: 21300000, guid: 3fdea510f6c395642bec63c0e92feb05, type: 3}
   - {fileID: 21300004, guid: 3fdea510f6c395642bec63c0e92feb05, type: 3}
+  - {fileID: 21300000, guid: dbaa4170c02ba41eeb8defabf5ce4a7a, type: 3}
   - {fileID: 21300000, guid: 3bd4f721cce0d448086247c259325149, type: 3}
   - {fileID: -5521528588998997521, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
   - {fileID: 707280647213360193, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
@@ -79,6 +80,7 @@ SpriteAtlas:
   - {fileID: -5851059584779512702, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
   - {fileID: -6847775299421939219, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
   - {fileID: -8135765977498320951, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
+  - {fileID: 21300000, guid: 16dec5814879a4f6888c666bc2f0f5d9, type: 3}
   - {fileID: 21300000, guid: 207ad99171e171b418bcaaa396d5a6f6, type: 3}
   - {fileID: 21300000, guid: aa1fcd9144ccf574985824378256b95c, type: 3}
   - {fileID: 21300000, guid: 081b5033ea188cb48b5d44b99ab920bc, type: 3}
@@ -242,6 +244,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 91f65276bc5344c4d947c88a99364d1b, type: 3}
   - {fileID: 21300000, guid: e26dc0d638731ec47abe9c4b3cae62ac, type: 3}
   - {fileID: 21300000, guid: bae27de6a19db3443894c2350fec9717, type: 3}
+  - {fileID: 21300000, guid: 6059ead73ff6548359eb16c888b4227b, type: 3}
   - {fileID: 21300000, guid: 2e92a61802edadc4495e4d901e3a97cb, type: 3}
   - {fileID: 21300002, guid: 2ca5ff28da2eca44183137741145a439, type: 3}
   - {fileID: 21300000, guid: 2ca5ff28da2eca44183137741145a439, type: 3}
@@ -1048,6 +1051,10 @@ SpriteAtlas:
   - {fileID: -2591857847239701004, guid: 3178799b764c8f14f821ba06edc51375, type: 3}
   - {fileID: 719774538432170253, guid: 3178799b764c8f14f821ba06edc51375, type: 3}
   - {fileID: 5304089592871775321, guid: 3178799b764c8f14f821ba06edc51375, type: 3}
+  - {fileID: -8444993466507529989, guid: 339037ab53b0b4e63b211cf9aad7d873, type: 3}
+  - {fileID: -7553645349646406862, guid: 339037ab53b0b4e63b211cf9aad7d873, type: 3}
+  - {fileID: 8916910800035117665, guid: 339037ab53b0b4e63b211cf9aad7d873, type: 3}
+  - {fileID: -5768694389955171141, guid: 339037ab53b0b4e63b211cf9aad7d873, type: 3}
   - {fileID: 21300000, guid: 898d91cb190da4b479714f63ae8519e0, type: 3}
   - {fileID: 21300000, guid: bfd5930cb171ad448883f9eca56c9e08, type: 3}
   - {fileID: 21300000, guid: 730e572c78cf0244ca0db36bb8f3af7f, type: 3}
@@ -1683,6 +1690,7 @@ SpriteAtlas:
   - customised_hair_1
   - customised_hair_0
   - customised_hair_2
+  - YugoBuildingLeft
   - SentientPlantEgg
   - portal-Sheet 2_13
   - portal-Sheet 2_12
@@ -1721,6 +1729,7 @@ SpriteAtlas:
   - portal-Sheet 2_35
   - portal-Sheet 2_34
   - portal-Sheet 2_36
+  - FanBuilding
   - Grass1
   - Clock
   - Sweetcorn
@@ -1884,6 +1893,7 @@ SpriteAtlas:
   - CollisionTile
   - Wood
   - farmerShirts
+  - YugoBuildingRight
   - GreenGridCursor
   - customised_accessory_1
   - customised_accessory_0
@@ -2690,6 +2700,10 @@ SpriteAtlas:
   - Cora_Portrait_1
   - Cora_Portrait_0
   - Cora_Portrait_2
+  - sand-Sheet_2
+  - sand-Sheet_3
+  - sand-Sheet_0
+  - sand-Sheet_1
   - GreenCursor
   - farmerHats
   - Acorn

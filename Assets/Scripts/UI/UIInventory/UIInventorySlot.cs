@@ -60,7 +60,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         mainCamera = Camera.main;
         //gridCursor = FindObjectOfType<GridCursor>();
         //cursor = FindObjectOfType<Cursor>();
-        parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParentTransform).transform;
+
     }
 
     private void ClearCursors()
