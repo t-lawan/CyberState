@@ -15,7 +15,7 @@ public class AnimationOverrides : MonoBehaviour
     {
         animationTypeDictionaryByAnimation = new Dictionary<AnimationClip, SO_AnimationType>();
 
-        foreach(SO_AnimationType item in soAnimationTypeArray)
+        foreach (SO_AnimationType item in soAnimationTypeArray)
         {
             animationTypeDictionaryByAnimation.Add(item.animationClip, item);
         }
@@ -31,7 +31,7 @@ public class AnimationOverrides : MonoBehaviour
 
     public void ApplyCharacterCustomisationParameters(List<CharacterAttribute> characterAttributes)
     {
-        foreach(CharacterAttribute characterAttribute in characterAttributes)
+        foreach (CharacterAttribute characterAttribute in characterAttributes)
         {
             Animator currentAnimator = null;
             List<KeyValuePair<AnimationClip, AnimationClip>> animsKeyValuePairList = new List<KeyValuePair<AnimationClip, AnimationClip>>();
@@ -43,7 +43,7 @@ public class AnimationOverrides : MonoBehaviour
 
             Animator[] animatorsArray = character.GetComponentsInChildren<Animator>();
 
-            foreach(Animator animator in animatorsArray)
+            foreach (Animator animator in animatorsArray)
             {
 
                 if (animator.name == animatorSOAssetName)
@@ -60,7 +60,7 @@ public class AnimationOverrides : MonoBehaviour
 
             List<AnimationClip> animationsList = new List<AnimationClip>(aoc.animationClips);
 
-            foreach(AnimationClip animationClip in animationsList)
+            foreach (AnimationClip animationClip in animationsList)
             {
                 SO_AnimationType sO_AnimationType;
                 bool foundAnimation = animationTypeDictionaryByAnimation.TryGetValue(animationClip, out sO_AnimationType);
@@ -75,7 +75,7 @@ public class AnimationOverrides : MonoBehaviour
                     SO_AnimationType swapSO_AnimationType;
                     bool foundSwapAnimation = animationTypeDictionaryByCompositeAttributeKey.TryGetValue(key, out swapSO_AnimationType);
 
-                    if(foundSwapAnimation)
+                    if (foundSwapAnimation)
                     {
                         AnimationClip swapAnimationClip = swapSO_AnimationType.animationClip;
                         animsKeyValuePairList.Add(new KeyValuePair<AnimationClip, AnimationClip>(animationClip, swapAnimationClip));
@@ -91,6 +91,6 @@ public class AnimationOverrides : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

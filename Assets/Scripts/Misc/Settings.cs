@@ -2,7 +2,8 @@
 
 public static class Settings
 {
-
+    //Scene
+    public const string PersistentScene = "PersistentScene";
     // Obsuring Time Fading
     public const float fadeInSeconds = 0.25f;
     public const float fadeOutSeconds = 0.35f;
@@ -70,6 +71,10 @@ public static class Settings
     public const string WateringTool = "Watering Can";
     public const string CollectingTool = "Basket";
     public const string FixingTool = "Building Fixer";
+
+    // Repeaing
+    public const int maxCollidersToTestPerReapSwing = 15;
+    public const int maxTargetComponetsToDestroy = 2;
 
     // Timed System
     public const float secondsPerGameSecond = 0.012f;
