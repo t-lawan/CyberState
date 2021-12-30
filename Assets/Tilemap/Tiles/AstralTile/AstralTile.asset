@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: AstralTile
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 1682367387690467127, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 7664696840434575500, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 7964659436526495838, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -5652992731462327198, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 312949923351328042, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -5198168527269207949, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -987454220330111955, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -6215972023986511997, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 126189628264598543, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 6129130087160736720, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 2

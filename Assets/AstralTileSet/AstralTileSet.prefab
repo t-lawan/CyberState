@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1493222493293038443}
   - component: {fileID: 6134607263431631954}
   - component: {fileID: 7411667585771968069}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: Layer1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,17 +40,67 @@ Tilemap:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6739181744656081688}
   m_Enabled: 1
-  m_Tiles: {}
-  m_AnimatedTiles: {}
-  m_TileAssetArray: []
-  m_TileSpriteArray: []
-  m_TileMatrixArray: []
-  m_TileColorArray: []
+  m_Tiles:
+  - first: {x: 0, y: 1, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 0
+  m_AnimatedTiles:
+  - first: {x: 0, y: 1, z: 0}
+    second:
+      m_AnimatedSprites:
+      - {fileID: 1682367387690467127, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: 7664696840434575500, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: 7964659436526495838, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: -5652992731462327198, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: 312949923351328042, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: -5198168527269207949, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: -987454220330111955, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: -6215972023986511997, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: 126189628264598543, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      - {fileID: 6129130087160736720, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+      m_AnimationSpeed: 1
+      m_AnimationTimeOffset: 0
+      m_IsLooping: 1
+  m_TileAssetArray:
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 9eb6880a443e94253bbdc5b52fa3e1d3, type: 2}
+  m_TileSpriteArray:
+  - m_RefCount: 1
+    m_Data: {fileID: 6129130087160736720, guid: f572fcb30dc17445dba8a1713ea70cea,
+      type: 3}
+  m_TileMatrixArray:
+  - m_RefCount: 1
+    m_Data:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  m_TileColorArray:
+  - m_RefCount: 1
+    m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 0, y: 0, z: 1}
+  m_Size: {x: 1, y: 2, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -77,10 +127,10 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6739181744656081688}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -127,7 +177,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8260235966552746804}
   - component: {fileID: 1344652122796474871}
-  m_Layer: 0
+  m_Layer: 31
   m_Name: AstralTileSet
   m_TagString: Untagged
   m_Icon: {fileID: 0}

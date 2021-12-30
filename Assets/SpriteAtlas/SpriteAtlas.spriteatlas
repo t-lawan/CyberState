@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 9055572
+    totalSpriteSurfaceArea: 9473772
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -114,6 +114,16 @@ SpriteAtlas:
   - {fileID: 4005202913230342895, guid: 2d0dfd935517f7049a9ec156af517511, type: 3}
   - {fileID: 5613540868099651934, guid: 2d0dfd935517f7049a9ec156af517511, type: 3}
   - {fileID: -2514537956183521370, guid: 2d0dfd935517f7049a9ec156af517511, type: 3}
+  - {fileID: 126189628264598543, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 6129130087160736720, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -987454220330111955, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -6215972023986511997, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 312949923351328042, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -5198168527269207949, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 7964659436526495838, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: -5652992731462327198, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 1682367387690467127, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
+  - {fileID: 7664696840434575500, guid: f572fcb30dc17445dba8a1713ea70cea, type: 3}
   - {fileID: 4506316268045044790, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
   - {fileID: -8854843215718498592, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
   - {fileID: -6566305492015415773, guid: 81f48bf3d25bc4d9d87610aed8729b85, type: 3}
@@ -1763,6 +1773,16 @@ SpriteAtlas:
   - Butch_Portrait_0
   - Butch_Portrait_1
   - Butch_Portrait_2
+  - RainbowTile_8
+  - RainbowTile_9
+  - RainbowTile_6
+  - RainbowTile_7
+  - RainbowTile_4
+  - RainbowTile_5
+  - RainbowTile_2
+  - RainbowTile_3
+  - RainbowTile_0
+  - RainbowTile_1
   - oretolubricant-Sheet_18
   - oretolubricant-Sheet_19
   - oretolubricant-Sheet_9

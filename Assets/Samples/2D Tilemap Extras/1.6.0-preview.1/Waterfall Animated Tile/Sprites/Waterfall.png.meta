@@ -1,37 +1,127 @@
 fileFormatVersion: 2
-guid: f572fcb30dc17445dba8a1713ea70cea
+guid: ea3d66a7edd9d46d38e40be89ae8d3cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1682367387690467127
-    second: RainbowTile_0
+      213: 4721293536888397434
+    second: Waterfall_0
   - first:
-      213: 7664696840434575500
-    second: RainbowTile_1
+      213: 5364352939883245045
+    second: Waterfall_1
   - first:
-      213: 7964659436526495838
-    second: RainbowTile_2
+      213: 7196270143389622831
+    second: Waterfall_2
   - first:
-      213: -5652992731462327198
-    second: RainbowTile_3
+      213: 6029957480157117390
+    second: Waterfall_3
   - first:
-      213: 312949923351328042
-    second: RainbowTile_4
+      213: -2507161886035769597
+    second: Waterfall_4
   - first:
-      213: -5198168527269207949
-    second: RainbowTile_5
+      213: 1725676371340164549
+    second: Waterfall_5
   - first:
-      213: -987454220330111955
-    second: RainbowTile_6
+      213: 2872686455240326431
+    second: Waterfall_6
   - first:
-      213: -6215972023986511997
-    second: RainbowTile_7
+      213: 3786080894526622295
+    second: Waterfall_7
   - first:
-      213: 126189628264598543
-    second: RainbowTile_8
+      213: 5045660051849922305
+    second: Waterfall_8
   - first:
-      213: 6129130087160736720
-    second: RainbowTile_9
+      213: 5612536237972652912
+    second: Waterfall_9
+  - first:
+      213: -3250777559591057548
+    second: Waterfall_10
+  - first:
+      213: 5957929059053060748
+    second: Waterfall_11
+  - first:
+      213: 7109957084653153026
+    second: Waterfall_12
+  - first:
+      213: 477525649501392199
+    second: Waterfall_13
+  - first:
+      213: -8431399023861082550
+    second: Waterfall_14
+  - first:
+      213: -5115951240437522786
+    second: Waterfall_15
+  - first:
+      213: 447768722618067419
+    second: Waterfall_16
+  - first:
+      213: 8730975675779852889
+    second: Waterfall_17
+  - first:
+      213: -3300933181597420981
+    second: Waterfall_18
+  - first:
+      213: 7541503168263187259
+    second: Waterfall_19
+  - first:
+      213: -5806308423563604605
+    second: Waterfall_20
+  - first:
+      213: -675073502400653780
+    second: Waterfall_21
+  - first:
+      213: 8203429098523291671
+    second: Waterfall_22
+  - first:
+      213: 219257364728720650
+    second: Waterfall_23
+  - first:
+      213: 8458781440006651279
+    second: Waterfall_24
+  - first:
+      213: 8715392851287823110
+    second: Waterfall_25
+  - first:
+      213: 3020409149263879807
+    second: Waterfall_26
+  - first:
+      213: -9102966082491327057
+    second: Waterfall_27
+  - first:
+      213: 5664645608148975165
+    second: Waterfall_28
+  - first:
+      213: -8527461141348136443
+    second: Waterfall_29
+  - first:
+      213: -908826963640821454
+    second: Waterfall_30
+  - first:
+      213: -5617403070256607301
+    second: Waterfall_31
+  - first:
+      213: 5275563956605968481
+    second: Waterfall_32
+  - first:
+      213: -8289717914693220806
+    second: Waterfall_33
+  - first:
+      213: 4951532302442582524
+    second: Waterfall_34
+  - first:
+      213: -3006427023634639824
+    second: Waterfall_35
+  - first:
+      213: 7534001321458047645
+    second: Waterfall_36
+  - first:
+      213: 5834154964668067101
+    second: Waterfall_37
+  - first:
+      213: -3291032407325874115
+    second: Waterfall_38
+  - first:
+      213: -6674891174622030782
+    second: Waterfall_39
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,6 +143,7 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -66,7 +157,7 @@ TextureImporter:
     mipBias: -100
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -75,7 +166,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 62
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -87,6 +178,7 @@ TextureImporter:
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
   applyGammaDecoding: 0
   platformSettings:
   - serializedVersion: 3
@@ -114,6 +206,30 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,13 +245,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RainbowTile_0
+      name: Waterfall_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 320
-        height: 320
+        x: 4
+        y: 72
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +259,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73ffdfcb938f85710800000000000000
-      internalID: 1682367387690467127
+      spriteID: a7e94921577658140800000000000000
+      internalID: 4721293536888397434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_1
+      name: Waterfall_1
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 320
-        height: 320
+        x: 72
+        y: 72
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c886925ca297e5a60800000000000000
-      internalID: 7664696840434575500
+      spriteID: 5fd2097c392027a40800000000000000
+      internalID: 5364352939883245045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_2
+      name: Waterfall_2
       rect:
         serializedVersion: 2
-        x: 640
-        y: 0
-        width: 320
-        height: 320
+        x: 140
+        y: 72
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e58ef171f87288e60800000000000000
-      internalID: 7964659436526495838
+      spriteID: f22ec7461994ed360800000000000000
+      internalID: 7196270143389622831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_3
+      name: Waterfall_3
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 320
-        height: 320
+        x: 208
+        y: 72
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 264a253cf098c81b0800000000000000
-      internalID: -5652992731462327198
+      spriteID: ecb797f4166bea350800000000000000
+      internalID: 6029957480157117390
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_4
+      name: Waterfall_4
       rect:
         serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 320
-        height: 320
+        x: 276
+        y: 72
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2577d51c42d75400800000000000000
-      internalID: 312949923351328042
+      spriteID: 30780745c85c43dd0800000000000000
+      internalID: -2507161886035769597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_5
+      name: Waterfall_5
       rect:
         serializedVersion: 2
-        x: 1600
-        y: 0
-        width: 320
-        height: 320
+        x: 4
+        y: 4
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,20 +364,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 370e089f3456cd7b0800000000000000
-      internalID: -5198168527269207949
+      spriteID: 5cdf3074485d2f710800000000000000
+      internalID: 1725676371340164549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_6
+      name: Waterfall_6
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 320
-        height: 320
+        x: 72
+        y: 4
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,20 +385,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d2c634d4e9bdb42f0800000000000000
-      internalID: -987454220330111955
+      spriteID: f1dfca36c15ddd720800000000000000
+      internalID: 2872686455240326431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_7
+      name: Waterfall_7
       rect:
         serializedVersion: 2
-        x: 2240
-        y: 0
-        width: 320
-        height: 320
+        x: 140
+        y: 4
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -290,20 +406,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38f9488b06e6cb9a0800000000000000
-      internalID: -6215972023986511997
+      spriteID: 75a0729938cda8430800000000000000
+      internalID: 3786080894526622295
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_8
+      name: Waterfall_8
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 320
-        height: 320
+        x: 208
+        y: 4
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -311,20 +427,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0ccc0f5cc050c100800000000000000
-      internalID: 126189628264598543
+      spriteID: 107c4e78519c50640800000000000000
+      internalID: 5045660051849922305
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RainbowTile_9
+      name: Waterfall_9
       rect:
         serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 320
-        height: 320
+        x: 276
+        y: 4
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -332,8 +448,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0dbef5b375b0f0550800000000000000
-      internalID: 6129130087160736720
+      spriteID: 0730e51d8fbb3ed40800000000000000
+      internalID: 5612536237972652912
       vertices: []
       indices: 
       edges: []
