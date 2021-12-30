@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 9473772
+    totalSpriteSurfaceArea: 9577196
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -264,6 +264,7 @@ SpriteAtlas:
   - {fileID: 5797424400471463424, guid: 539732b8cdfbd4ca4852b8bd258c7797, type: 3}
   - {fileID: 6754862462742588234, guid: 539732b8cdfbd4ca4852b8bd258c7797, type: 3}
   - {fileID: 6015276540215383894, guid: 539732b8cdfbd4ca4852b8bd258c7797, type: 3}
+  - {fileID: 21300000, guid: 742d5b79980344d468c5b0da42a416c6, type: 3}
   - {fileID: 21300000, guid: e452dd2aa629f624390a9ba516a7c47e, type: 3}
   - {fileID: 21300000, guid: d210793aeef3be74ba5ecda0bbe898c9, type: 3}
   - {fileID: 21300006, guid: 3f98ab3abed1cec40b1c2e61bead43d6, type: 3}
@@ -1682,6 +1683,7 @@ SpriteAtlas:
   - {fileID: 7679637303443106010, guid: 10acdb0f2f8194d91a3f2124ddacc5d5, type: 3}
   - {fileID: 5572829124895612909, guid: 10acdb0f2f8194d91a3f2124ddacc5d5, type: 3}
   - {fileID: 3980945386439611443, guid: 10acdb0f2f8194d91a3f2124ddacc5d5, type: 3}
+  - {fileID: 21300000, guid: 88db641f2388c4b06bc4cec2e4bf474e, type: 3}
   - {fileID: 21300000, guid: 2a21c56faaf4afd479c55eda19270d74, type: 3}
   - {fileID: -8889897509666649805, guid: 400e208f8ff6631429ef6ca968c16ad2, type: 3}
   - {fileID: 6224320500644084454, guid: 400e208f8ff6631429ef6ca968c16ad2, type: 3}
@@ -1923,6 +1925,7 @@ SpriteAtlas:
   - BushTile_1
   - BushTile_2
   - BushTile_3
+  - CowrieShell
   - Grass2
   - InventoryBar
   - customised_hats_3
@@ -3341,6 +3344,7 @@ SpriteAtlas:
   - bush_house-Sheet_68
   - bush_house-Sheet_58
   - bush_house-Sheet_59
+  - Egregore
   - farmerAdornments
   - Cora_8
   - Cora_7

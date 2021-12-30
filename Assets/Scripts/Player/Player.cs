@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using UnityEngine.InputSystem;
 
 public class Player : SingletonMonoBehaviour<Player>
 {
@@ -118,7 +119,12 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void PlayerMovementInput()
     {
+        //var gamepad = Gamepad.current;
+
         xInput = Input.GetAxisRaw("Horizontal");
+        //if (Input.inputString != "") Debug.Log(Input.inputString);
+
+        //xInput = Gamepad.current[UnityEngine.InputSystem.LowLevel.GamepadButton.DpadUp].normalizeMax;
         yInput = Input.GetAxisRaw("Vertical");
 
         if (yInput != 0 && xInput != 0)
@@ -191,6 +197,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void PlayerWalkInput()
     {
+        //var gamepad = Gamepad.current;
+
         if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             isRunning = true;

@@ -283,7 +283,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7780488, y: 1}
+    m_SensorSize: {x: 1.7775061, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1773,6 +1773,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 527213060}
+  - component: {fileID: 527213062}
+  - component: {fileID: 527213061}
   m_Layer: 0
   m_Name: SceneItemsManager
   m_TagString: Untagged
@@ -1794,6 +1796,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &527213061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527213059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159b2a5158c0f4df7baa7099e8f30c11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 2315549344951914638, guid: 042b37da235c0424ab81ab7bd5ff5787,
+    type: 3}
+--- !u!114 &527213062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 527213059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1031a32c6e8984214a92596704738645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gUID: 
 --- !u!1001 &530816791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2632,7 +2661,7 @@ MonoBehaviour:
   fadeDuration: 2
   faderCanvasGroup: {fileID: 505967895}
   faderImage: {fileID: 505967896}
-  startSceneName: 1
+  startSceneName: 0
 --- !u!1 &1047993758
 GameObject:
   m_ObjectHideFlags: 0

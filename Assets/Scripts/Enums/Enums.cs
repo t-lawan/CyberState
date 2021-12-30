@@ -141,6 +141,7 @@ public enum ItemType
     Furniture,
     Building,
     Reapable_scenery,
+    NPC,
     none,
     count
 

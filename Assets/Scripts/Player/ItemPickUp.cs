@@ -9,6 +9,7 @@ public class ItemPickUp : MonoBehaviour
         if (item != null)
         {
             // Get item details
+            //Debug.Log(item.ItemCode);
             ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(item.ItemCode);
             if (itemDetails.canBePickedUp == true)
             {
