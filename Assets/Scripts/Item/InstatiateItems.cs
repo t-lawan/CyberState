@@ -14,7 +14,6 @@ public class PrefabInstatiateStruct
 public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 {
     [SerializeField] public SOPrefabInstatiate itemPrefabs = null;
-    [SerializeField] public int numOfPrefabs = 20;
     private Transform parentItem;
     [SerializeField] public Vector3 minPos;
     [SerializeField] public Vector3 maxPos;
@@ -47,15 +46,78 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
             for (int j = 0; j < itemPrefabs.prefabInstatiateList[i].numberToInstatiateAtBeginning; j++)
             {
-                Vector3 itemPosition = GetItemPosition();
 
-                GameObject itemGameObject = Instantiate(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition, Quaternion.identity, parentItem);
+                Vector3 itemPosition = GetItemPosition();
+                while (!CanPlaceItem(itemPrefabs.prefabInstatiateList[i].prefab.GetComponent<Item>(), itemPosition))
+                {
+                    itemPosition = GetItemPosition();
+                }
+                CreateItemInSpace(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition);
+
             }
 
-            //Item item = itemGameObject.GetComponent<Item>();
 
         }
 
+    }
+
+    private void CreateItemInSpace(GameObject prefab, Vector3 itemPosition)
+    {
+        GameObject itemGameObject = Instantiate(prefab, itemPosition, Quaternion.identity, parentItem);
+
+    }
+
+    private bool ItemAlreadyExistsAtPosition(Vector3 pos)
+    {
+        if (parentItem == null)
+        {
+            return false;
+        }
+
+        bool itemExists = false;
+
+        //gridPropertyDetails
+        //for(int i=0; i < parentItem.childCount; i++)
+        //{
+        //    //parentItem.GetC
+        //}
+
+        return itemExists;
+    }
+
+    private bool CanPlaceItem(Item item, Vector3 pos)
+    {
+        bool canPlaceItem = false;
+
+        // Get Grid Property Details for Pos
+        GridPropertyDetails gridPropertyDetails = GridPropertiesManager.Instance.GetGridPropertyDetails((int)pos.x, (int)pos.y);
+
+        // Get Item Details from Item
+        ItemDetails itemDetails = InventoryManager.Instance.GetItemDetails(item.ItemCode);
+
+        // Check if item type allows it to be dropped with conditions
+        //switch (itemDetails.itemType)
+        //{
+        //    case ItemType.Building:
+        //        //if (gridPropertyDetails.canPlaceBuilding)
+        //        //{
+        //        //    canPlaceItem = true;
+        //        //}
+        //        break;
+        //    case ItemType.Commodity:
+        //        //if (gridPropertyDetails.canDropItem)
+        //        //{
+        //        //    canPlaceItem = true;
+
+        //        //}
+        //        break;
+        //    default:
+        //        canPlaceItem = false;
+        //        break;
+        //}
+
+
+        return true;
     }
 
     private void InstantiateSceneItemsEachDay()
@@ -68,18 +130,15 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
                 Vector3 itemPosition = GetItemPosition();
                 GameObject itemGameObject = Instantiate(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition, Quaternion.identity, parentItem);
             }
-
-            //Item item = itemGameObject.GetComponent<Item>();
-
         }
     }
 
     private Vector3 GetItemPosition()
     {
         return new Vector3(
-    Random.Range(minPos.x, maxPos.x),
-    Random.Range(minPos.y, maxPos.y),
-    0);
+             Random.Range(minPos.x, maxPos.x),
+            Random.Range(minPos.y, maxPos.y),
+            0);
     }
 
     private void AdvanceGameDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)

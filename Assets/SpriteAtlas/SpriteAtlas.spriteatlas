@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 9577196
+    totalSpriteSurfaceArea: 9679596
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -1059,6 +1059,7 @@ SpriteAtlas:
   - {fileID: -8253152842590474038, guid: 41dae72b559da4333b45720b0b1e304f, type: 3}
   - {fileID: -5954885063846506835, guid: 41dae72b559da4333b45720b0b1e304f, type: 3}
   - {fileID: -998844278576856851, guid: 41dae72b559da4333b45720b0b1e304f, type: 3}
+  - {fileID: 21300000, guid: ac45825bf5d544d408799d13295d7927, type: 3}
   - {fileID: -2591857847239701004, guid: 3178799b764c8f14f821ba06edc51375, type: 3}
   - {fileID: 719774538432170253, guid: 3178799b764c8f14f821ba06edc51375, type: 3}
   - {fileID: 5304089592871775321, guid: 3178799b764c8f14f821ba06edc51375, type: 3}
@@ -2720,6 +2721,7 @@ SpriteAtlas:
   - ExoWomb_0
   - ExoWomb_3
   - ExoWomb_2
+  - BushHouse
   - Cora_Portrait_1
   - Cora_Portrait_0
   - Cora_Portrait_2
