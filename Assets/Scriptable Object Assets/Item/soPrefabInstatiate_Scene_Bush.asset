@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: soPrefabInstatiate
+  m_EditorClassIdentifier: Assembly-CSharp::SOPrefabInstatiate
+  prefabInstatiateList:
+  - prefab: {fileID: 2478037087035815189, guid: 6a4d965ad79ee47b7a5648ab35d6da3e,
+      type: 3}
+    numberToInstatiate: 50
+  - prefab: {fileID: 8282279209120076057, guid: 2a945565fe2964f8a9676d18b64f377a,
+      type: 3}
+    numberToInstatiate: 50
+  - prefab: {fileID: 5230101591938121987, guid: 36af3ea5278f44697925e0384ee33a3a,
+      type: 3}
+    numberToInstatiate: 50

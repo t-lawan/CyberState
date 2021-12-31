@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
     public Weather currentWeather;
