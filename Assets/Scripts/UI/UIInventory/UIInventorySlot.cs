@@ -58,17 +58,17 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     private void Start()
     {
         mainCamera = Camera.main;
-        //gridCursor = FindObjectOfType<GridCursor>();
-        //cursor = FindObjectOfType<Cursor>();
+        gridCursor = FindObjectOfType<GridCursor>();
+        cursor = FindObjectOfType<Cursor>();
 
     }
 
     private void ClearCursors()
     {
-        //gridCursor.DisableCursor();
-        //cursor.DisableCursor();
-        //gridCursor.SelectedItemType = ItemType.none;
-        //cursor.SelectedItemType = ItemType.none;
+        gridCursor.DisableCursor();
+        cursor.DisableCursor();
+        gridCursor.SelectedItemType = ItemType.none;
+        cursor.SelectedItemType = ItemType.none;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -127,8 +127,8 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -mainCamera.transform.position.z));
 
-            //if (gridCursor.CursorPositionIsValid)
-            //{
+            if (gridCursor.CursorPositionIsValid)
+            {
                 GameObject itemGameObject = Instantiate(itemPrefab, new Vector3(worldPosition.x, worldPosition.y - Settings.gridCellSize / 2f, worldPosition.z), Quaternion.identity, parentItem);
                 Item item = itemGameObject.GetComponent<Item>();
                 item.ItemCode = itemDetails.itemCode;
@@ -139,7 +139,7 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
                 {
                     ClearSelectedItem();
                 }
-            //}
+            }
 
 
         }
@@ -171,29 +171,29 @@ public class UIInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         inventoryBar.SetHighlighedInventorySlots();
 
-        //gridCursor.ItemUseGridRadius = itemDetails.itemUseGridRadius;
-        //cursor.ItemUseRadius = itemDetails.itemUseRadius;
+        gridCursor.ItemUseGridRadius = itemDetails.itemUseGridRadius;
+        cursor.ItemUseRadius = itemDetails.itemUseRadius;
 
         if (itemDetails.itemUseGridRadius > 0)
         {
-            //gridCursor.EnableCursor();
+            gridCursor.EnableCursor();
         }
         else
         {
-            //gridCursor.DisableCursor();
+            gridCursor.DisableCursor();
         }
 
         if (itemDetails.itemUseRadius > 0.0f)
         {
-            //cursor.EnableCursor();
+            cursor.EnableCursor();
         }
         else
         {
-            //cursor.DisableCursor();
+            cursor.DisableCursor();
         }
 
-        //gridCursor.SelectedItemType = itemDetails.itemType;
-        //cursor.SelectedItemType = itemDetails.itemType;
+        gridCursor.SelectedItemType = itemDetails.itemType;
+        cursor.SelectedItemType = itemDetails.itemType;
 
         InventoryManager.Instance.SetSelectedInventoryItem(InventoryLocation.player, itemDetails.itemCode);
 

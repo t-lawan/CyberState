@@ -414,10 +414,10 @@ public class GridPropertiesManager : SingletonMonoBehaviour<GridPropertiesManage
             sceneSave.gridPropertyDetailsDictionary = gridPropertyDictionary;
 
 
-            //if (so_GridProperties.sceneName.ToString() == SceneControllerManager.Instance.startSceneName.ToString())
-            //{
-            //    this.gridPropertyDictionary = gridPropertyDictionary;
-            //}
+            if (so_GridProperties.sceneName.ToString() == SceneControllerManager.Instance.startSceneName.ToString())
+            {
+                this.gridPropertyDictionary = gridPropertyDictionary;
+            }
 
             GameObjectSave.sceneData.Add(so_GridProperties.sceneName.ToString(), sceneSave);
         }

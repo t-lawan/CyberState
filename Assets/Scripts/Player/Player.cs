@@ -10,7 +10,7 @@ public class Player : SingletonMonoBehaviour<Player>
     private WaitForSeconds afterLiftToolAnimationPause;
     private AnimationOverrides animationOverrides;
 
-    //    private GridCursor gridCursor;
+    private GridCursor gridCursor;
     // Movement Parameters
     private float xInput;
     private float yInput;
@@ -76,14 +76,14 @@ public class Player : SingletonMonoBehaviour<Player>
         mainCamera = Camera.main;
     }
 
-    //    private void Start()
-    //    {
-    //        gridCursor = FindObjectOfType<GridCursor>();
-    //        useToolAnimationPause = new WaitForSeconds(Settings.useToolAnimationPause);
-    //        liftToolAnimationPause = new WaitForSeconds(Settings.liftToolAnimationPause);
-    //        afterUseToolAnimationPause = new WaitForSeconds(Settings.afterUseToolAnimationPause);
-    //        afterLiftToolAnimationPause = new WaitForSeconds(Settings.afterLiftToolAnimationPause);
-    //    }
+    private void Start()
+    {
+        gridCursor = FindObjectOfType<GridCursor>();
+        useToolAnimationPause = new WaitForSeconds(Settings.useToolAnimationPause);
+        liftToolAnimationPause = new WaitForSeconds(Settings.liftToolAnimationPause);
+        afterUseToolAnimationPause = new WaitForSeconds(Settings.afterUseToolAnimationPause);
+        afterLiftToolAnimationPause = new WaitForSeconds(Settings.afterLiftToolAnimationPause);
+    }
 
     private void Update()
     {
@@ -216,229 +216,229 @@ public class Player : SingletonMonoBehaviour<Player>
         }
     }
 
-    //private void PlayerClickInput()
-    //{
-    //    if (!playerToolUseDisabled)
-    //    {
-    //        if (Input.GetMouseButton(0))
-    //        {
+    private void PlayerClickInput()
+    {
+        if (!playerToolUseDisabled)
+        {
+            if (Input.GetMouseButton(0))
+            {
 
-    //            if (gridCursor.CursorIsEnabled)
-    //            {
-    //                Vector3Int cursorGridPosition = gridCursor.GetGridPositionForCursor();
-    //                Vector3Int playerGridPosition = gridCursor.GetGridPositionForPlayer();
-    //                ProcessPlayerClickInput(cursorGridPosition, playerGridPosition);
-    //            }
-    //        }
+                if (gridCursor.CursorIsEnabled)
+                {
+                    Vector3Int cursorGridPosition = gridCursor.GetGridPositionForCursor();
+                    Vector3Int playerGridPosition = gridCursor.GetGridPositionForPlayer();
+                    ProcessPlayerClickInput(cursorGridPosition, playerGridPosition);
+                }
+            }
 
-    //    }
+        }
 
-    //}
+    }
 
-    //    private void ProcessPlayerClickInput(Vector3Int cursorGridPosition, Vector3Int playerGridPosition)
-    //    {
-    //        ResetMovement();
+    private void ProcessPlayerClickInput(Vector3Int cursorGridPosition, Vector3Int playerGridPosition)
+    {
+        ResetMovement();
 
-    //        Vector3Int playerDirection = GetPlayerClickDirection(cursorGridPosition, playerGridPosition);
+        Vector3Int playerDirection = GetPlayerClickDirection(cursorGridPosition, playerGridPosition);
 
-    //        GridPropertyDetails gridPropertyDetails = GridPropertiesManager.Instance.GetGridPropertyDetails(cursorGridPosition.x, cursorGridPosition.y);
-    //        ItemDetails itemDetails = InventoryManager.Instance.GetSelectedInventoryItemDetails(InventoryLocation.player);
+        GridPropertyDetails gridPropertyDetails = GridPropertiesManager.Instance.GetGridPropertyDetails(cursorGridPosition.x, cursorGridPosition.y);
+        ItemDetails itemDetails = InventoryManager.Instance.GetSelectedInventoryItemDetails(InventoryLocation.player);
 
-    //        if (itemDetails != null)
-    //        {
-    //            switch (itemDetails.itemType)
-    //            {
-    //                case ItemType.Seed:
-    //                    if (Input.GetMouseButtonDown(0))
-    //                    {
-    //                        ProcessPlayerClickInputSeed(itemDetails);
-    //                    }
-    //                    break;
-    //                case ItemType.Commodity:
-    //                    if (Input.GetMouseButtonDown(0))
-    //                    {
-    //                        ProcessPlayerClickInputCommidity(itemDetails);
-    //                    }
-    //                    break;
-    //                case ItemType.Watering_Tool:
-    //                    ProcessPlayerClickInputTool(gridPropertyDetails, itemDetails, playerDirection);
-    //                    break;
-    //                case ItemType.Hoeing_Tool:
-    //                    ProcessPlayerClickInputTool(gridPropertyDetails, itemDetails, playerDirection);
-    //                    break;
-    //                case ItemType.none:
-    //                    break;
-    //                case ItemType.count:
-    //                    break;
-    //                default:
-    //                    break;
-    //            }
-    //        }
-    //    }
+        if (itemDetails != null)
+        {
+            switch (itemDetails.itemType)
+            {
+                case ItemType.Seed:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ProcessPlayerClickInputSeed(itemDetails);
+                    }
+                    break;
+                case ItemType.Commodity:
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        ProcessPlayerClickInputCommidity(itemDetails);
+                    }
+                    break;
+                case ItemType.Watering_Tool:
+                    ProcessPlayerClickInputTool(gridPropertyDetails, itemDetails, playerDirection);
+                    break;
+                case ItemType.Hoeing_Tool:
+                    ProcessPlayerClickInputTool(gridPropertyDetails, itemDetails, playerDirection);
+                    break;
+                case ItemType.none:
+                    break;
+                case ItemType.count:
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 
-    //    private void ProcessPlayerClickInputTool(GridPropertyDetails gridPropertyDetails, ItemDetails itemDetails, Vector3Int playerDirection)
-    //    {
-    //        switch (itemDetails.itemType)
-    //        {
-    //            case ItemType.Hoeing_Tool:
-    //                if (gridCursor.CursorPositionIsValid)
-    //                {
-    //                    HoeGroundAtCursor(gridPropertyDetails, playerDirection);
-    //                }
-    //                break;
-    //            case ItemType.Watering_Tool:
-    //                if (gridCursor.CursorPositionIsValid)
-    //                {
-    //                    WaterGroundAtCursor(gridPropertyDetails, playerDirection);
-    //                }
-    //                break;
-    //            default:
-    //                break;
-    //        }
-    //    }
+    private void ProcessPlayerClickInputTool(GridPropertyDetails gridPropertyDetails, ItemDetails itemDetails, Vector3Int playerDirection)
+    {
+        switch (itemDetails.itemType)
+        {
+            case ItemType.Hoeing_Tool:
+                if (gridCursor.CursorPositionIsValid)
+                {
+                    HoeGroundAtCursor(gridPropertyDetails, playerDirection);
+                }
+                break;
+            case ItemType.Watering_Tool:
+                if (gridCursor.CursorPositionIsValid)
+                {
+                    WaterGroundAtCursor(gridPropertyDetails, playerDirection);
+                }
+                break;
+            default:
+                break;
+        }
+    }
 
-    //    private void WaterGroundAtCursor(GridPropertyDetails gridPropertyDetails, Vector3Int playerDirection)
-    //    {
-    //        StartCoroutine(WaterGroundAtCursorRoutine(playerDirection, gridPropertyDetails));
+    private void WaterGroundAtCursor(GridPropertyDetails gridPropertyDetails, Vector3Int playerDirection)
+    {
+        StartCoroutine(WaterGroundAtCursorRoutine(playerDirection, gridPropertyDetails));
 
-    //    }
+    }
 
-    //    private IEnumerator WaterGroundAtCursorRoutine(Vector3Int playerDirection, GridPropertyDetails gridPropertyDetails)
-    //    {
-    //        PlayerInputIsDisabled = true;
-    //        playerToolUseDisabled = true;
+    private IEnumerator WaterGroundAtCursorRoutine(Vector3Int playerDirection, GridPropertyDetails gridPropertyDetails)
+    {
+        PlayerInputIsDisabled = true;
+        playerToolUseDisabled = true;
 
-    //        toolCharacterAttribute.partVariantType = PartVariantType.wateringCan;
-    //        characterAttributeCustomisationList.Clear();
-    //        characterAttributeCustomisationList.Add(toolCharacterAttribute);
-    //        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+        toolCharacterAttribute.partVariantType = PartVariantType.wateringCan;
+        characterAttributeCustomisationList.Clear();
+        characterAttributeCustomisationList.Add(toolCharacterAttribute);
+        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
 
-    //        toolEffect = ToolEffect.watering;
+        toolEffect = ToolEffect.lubricate;
 
-    //        if (playerDirection == Vector3Int.right)
-    //        {
-    //            isLiftingToolRight = true;
-    //        }
+        if (playerDirection == Vector3Int.right)
+        {
+            isLiftingToolRight = true;
+        }
 
-    //        if (playerDirection == Vector3Int.left)
-    //        {
-    //            isLiftingToolLeft = true;
-    //        }
+        if (playerDirection == Vector3Int.left)
+        {
+            isLiftingToolLeft = true;
+        }
 
-    //        if (playerDirection == Vector3Int.up)
-    //        {
-    //            isLiftingToolUp = true;
-    //        }
+        if (playerDirection == Vector3Int.up)
+        {
+            isLiftingToolUp = true;
+        }
 
-    //        if (playerDirection == Vector3Int.down)
-    //        {
-    //            isLiftingToolDown = true;
-    //        }
+        if (playerDirection == Vector3Int.down)
+        {
+            isLiftingToolDown = true;
+        }
 
-    //        yield return liftToolAnimationPause;
+        yield return liftToolAnimationPause;
 
-    //        if (gridPropertyDetails.daySinceWatered == -1)
-    //        {
-    //            gridPropertyDetails.daySinceWatered = 0;
-    //        }
+        if (gridPropertyDetails.daySinceWatered == -1)
+        {
+            gridPropertyDetails.daySinceWatered = 0;
+        }
 
-    //        GridPropertiesManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
-    //        GridPropertiesManager.Instance.DisplayWateredGround(gridPropertyDetails);
+        GridPropertiesManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
+        GridPropertiesManager.Instance.DisplayWateredGround(gridPropertyDetails);
 
-    //        yield return afterLiftToolAnimationPause;
+        yield return afterLiftToolAnimationPause;
 
-    //        PlayerInputIsDisabled = false;
-    //        playerToolUseDisabled = false;
-    //    }
+        PlayerInputIsDisabled = false;
+        playerToolUseDisabled = false;
+    }
 
-    //    private void HoeGroundAtCursor(GridPropertyDetails gridPropertyDetails, Vector3Int playerDirection)
-    //    {
-    //        StartCoroutine(HoeGroundAtCursorRoutine(playerDirection, gridPropertyDetails));
-    //    }
+    private void HoeGroundAtCursor(GridPropertyDetails gridPropertyDetails, Vector3Int playerDirection)
+    {
+        StartCoroutine(HoeGroundAtCursorRoutine(playerDirection, gridPropertyDetails));
+    }
 
-    //    private IEnumerator HoeGroundAtCursorRoutine(Vector3Int playerDirection, GridPropertyDetails gridPropertyDetails)
-    //    {
-    //        PlayerInputIsDisabled = true;
-    //        playerToolUseDisabled = true;
+    private IEnumerator HoeGroundAtCursorRoutine(Vector3Int playerDirection, GridPropertyDetails gridPropertyDetails)
+    {
+        PlayerInputIsDisabled = true;
+        playerToolUseDisabled = true;
 
-    //        toolCharacterAttribute.partVariantType = PartVariantType.hoe;
-    //        characterAttributeCustomisationList.Clear();
-    //        characterAttributeCustomisationList.Add(toolCharacterAttribute);
-    //        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+        toolCharacterAttribute.partVariantType = PartVariantType.hoe;
+        characterAttributeCustomisationList.Clear();
+        characterAttributeCustomisationList.Add(toolCharacterAttribute);
+        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
 
-    //        if (playerDirection == Vector3Int.right)
-    //        {
-    //            isUsingToolRight = true;
-    //        }
+        if (playerDirection == Vector3Int.right)
+        {
+            isUsingToolRight = true;
+        }
 
-    //        if (playerDirection == Vector3Int.left)
-    //        {
-    //            isUsingToolLeft = true;
-    //        }
+        if (playerDirection == Vector3Int.left)
+        {
+            isUsingToolLeft = true;
+        }
 
-    //        if (playerDirection == Vector3Int.up)
-    //        {
-    //            isUsingToolUp = true;
-    //        }
+        if (playerDirection == Vector3Int.up)
+        {
+            isUsingToolUp = true;
+        }
 
-    //        if (playerDirection == Vector3Int.down)
-    //        {
-    //            isUsingToolDown = true;
-    //        }
+        if (playerDirection == Vector3Int.down)
+        {
+            isUsingToolDown = true;
+        }
 
-    //        yield return useToolAnimationPause;
+        yield return useToolAnimationPause;
 
-    //        if (gridPropertyDetails.daySinceDug == -1)
-    //        {
-    //            gridPropertyDetails.daySinceDug = 0;
-    //        }
+        if (gridPropertyDetails.daySinceDug == -1)
+        {
+            gridPropertyDetails.daySinceDug = 0;
+        }
 
-    //        GridPropertiesManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
-    //        GridPropertiesManager.Instance.DisplayDugGround(gridPropertyDetails);
+        GridPropertiesManager.Instance.SetGridPropertyDetails(gridPropertyDetails.gridX, gridPropertyDetails.gridY, gridPropertyDetails);
+        GridPropertiesManager.Instance.DisplayDugGround(gridPropertyDetails);
 
-    //        yield return afterUseToolAnimationPause;
+        yield return afterUseToolAnimationPause;
 
-    //        PlayerInputIsDisabled = false;
-    //        playerToolUseDisabled = false;
+        PlayerInputIsDisabled = false;
+        playerToolUseDisabled = false;
 
 
-    //    }
+    }
 
-    //    private Vector3Int GetPlayerClickDirection(Vector3Int cursorGridPosition, Vector3Int playerGridPosition)
-    //    {
-    //        if (cursorGridPosition.x > playerGridPosition.x)
-    //        {
-    //            return Vector3Int.right;
-    //        }
-    //        else if (cursorGridPosition.x < playerGridPosition.x)
-    //        {
-    //            return Vector3Int.left;
-    //        }
-    //        else if (cursorGridPosition.y < playerGridPosition.y)
-    //        {
-    //            return Vector3Int.up;
-    //        }
-    //        else
-    //        {
-    //            return Vector3Int.down;
-    //        }
-    //    }
+    private Vector3Int GetPlayerClickDirection(Vector3Int cursorGridPosition, Vector3Int playerGridPosition)
+    {
+        if (cursorGridPosition.x > playerGridPosition.x)
+        {
+            return Vector3Int.right;
+        }
+        else if (cursorGridPosition.x < playerGridPosition.x)
+        {
+            return Vector3Int.left;
+        }
+        else if (cursorGridPosition.y < playerGridPosition.y)
+        {
+            return Vector3Int.up;
+        }
+        else
+        {
+            return Vector3Int.down;
+        }
+    }
 
-    //    private void ProcessPlayerClickInputCommidity(ItemDetails itemDetails)
-    //    {
-    //        if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid)
-    //        {
-    //            EventHandler.CallDropSelectedItemEvent();
-    //        }
-    //    }
+    private void ProcessPlayerClickInputCommidity(ItemDetails itemDetails)
+    {
+        if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid)
+        {
+            EventHandler.CallDropSelectedItemEvent();
+        }
+    }
 
-    //    private void ProcessPlayerClickInputSeed(ItemDetails itemDetails)
-    //    {
-    //        if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid)
-    //        {
-    //            EventHandler.CallDropSelectedItemEvent();
-    //        }
-    //    }
+    private void ProcessPlayerClickInputSeed(ItemDetails itemDetails)
+    {
+        if (itemDetails.canBeDropped && gridCursor.CursorPositionIsValid)
+        {
+            EventHandler.CallDropSelectedItemEvent();
+        }
+    }
 
     public void EnablePlayerInput()
     {

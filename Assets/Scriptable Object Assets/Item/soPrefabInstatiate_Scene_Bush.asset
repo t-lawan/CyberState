@@ -15,13 +15,13 @@ MonoBehaviour:
   prefabInstatiateList:
   - prefab: {fileID: 2478037087035815189, guid: 6a4d965ad79ee47b7a5648ab35d6da3e,
       type: 3}
-    numberToInstatiateAtBeginning: 40
+    numberToInstatiateAtBeginning: 100
     minNumberToInstatiateEachDay: 4
     maxNumberToInstatiateEachDay: 10
     sceneName: 0
   - prefab: {fileID: 8282279209120076057, guid: 2a945565fe2964f8a9676d18b64f377a,
       type: 3}
-    numberToInstatiateAtBeginning: 40
+    numberToInstatiateAtBeginning: 100
     minNumberToInstatiateEachDay: 4
     maxNumberToInstatiateEachDay: 10
     sceneName: 0

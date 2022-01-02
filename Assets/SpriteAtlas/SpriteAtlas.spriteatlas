@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 9679596
+    totalSpriteSurfaceArea: 9790188
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -42,6 +42,38 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 3fdea510f6c395642bec63c0e92feb05, type: 3}
   - {fileID: 21300004, guid: 3fdea510f6c395642bec63c0e92feb05, type: 3}
   - {fileID: 21300000, guid: dbaa4170c02ba41eeb8defabf5ce4a7a, type: 3}
+  - {fileID: 6933223335694393071, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -1397365509746193196, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 17334880324610018, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 7143828148132578542, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -8186299728689910322, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 7364767379561946811, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -4987229573879477163, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 818433697204119388, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 7591868225199800783, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 3174740000172749308, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 2655803857110052468, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -2961396871861752453, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -2717033803204188961, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 8316314858200970040, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 6122583050134324219, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 1301980698495550940, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -6878932850842707370, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -5750998479089953526, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -8266863679620031733, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -5815133488013185899, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 5818661052790145292, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -4872621163021313545, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -2463700668463398288, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -1144834211054590616, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 3766865763359371942, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 9185315290136886186, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -4060529681369373566, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 4104806012796865313, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -6124715397737624461, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 5588880199808461859, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: -8482852301027147495, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
+  - {fileID: 7303584569058495136, guid: 13d7f0118620646d38b9ddfd5d302852, type: 3}
   - {fileID: 21300000, guid: 3bd4f721cce0d448086247c259325149, type: 3}
   - {fileID: -5521528588998997521, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
   - {fileID: 707280647213360193, guid: e02ab6516804a45c28b8044c5d6ce809, type: 3}
@@ -1578,6 +1610,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 90499fac1706de44382ab07f7887e79e, type: 3}
   - {fileID: 21300000, guid: b2eff0cde9f776947b747c1a4cc96406, type: 3}
   - {fileID: 21300000, guid: d1488fdd7509cda4f9b89da8bb3c5a68, type: 3}
+  - {fileID: -354288524004490963, guid: 432835fd904224c81832b793f3c375d5, type: 3}
+  - {fileID: 1845112844557834121, guid: 432835fd904224c81832b793f3c375d5, type: 3}
+  - {fileID: 7129203034245968459, guid: 432835fd904224c81832b793f3c375d5, type: 3}
+  - {fileID: 527756936996117868, guid: 432835fd904224c81832b793f3c375d5, type: 3}
   - {fileID: 21300000, guid: ffd3a07e9702a614284d1e5a4be9f532, type: 3}
   - {fileID: 21300000, guid: 9982bf9edb0201b4583055eb8b80c925, type: 3}
   - {fileID: 1814301352343478109, guid: afba78ae84664a941a55c31758ab5cf9, type: 3}
@@ -1704,6 +1740,38 @@ SpriteAtlas:
   - customised_hair_0
   - customised_hair_2
   - YugoBuildingLeft
+  - DugGround_14
+  - DugGround_15
+  - DugGround_16
+  - DugGround_17
+  - DugGround_10
+  - DugGround_11
+  - DugGround_12
+  - DugGround_13
+  - DugGround_18
+  - DugGround_19
+  - DugGround_30
+  - DugGround_31
+  - DugGround_29
+  - DugGround_28
+  - DugGround_25
+  - DugGround_24
+  - DugGround_27
+  - DugGround_26
+  - DugGround_21
+  - DugGround_20
+  - DugGround_23
+  - DugGround_22
+  - DugGround_9
+  - DugGround_8
+  - DugGround_5
+  - DugGround_4
+  - DugGround_7
+  - DugGround_6
+  - DugGround_1
+  - DugGround_0
+  - DugGround_3
+  - DugGround_2
   - SentientPlantEgg
   - portal-Sheet 2_13
   - portal-Sheet 2_12
@@ -3240,6 +3308,10 @@ SpriteAtlas:
   - Collision Tile Diagonal
   - InventoryHighlight
   - PauseScreenSelectedTab
+  - BushTile2_0
+  - BushTile2_1
+  - BushTile2_2
+  - BushTile2_3
   - Stone2Seed
   - farmerHair
   - Butch_14

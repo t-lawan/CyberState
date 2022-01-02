@@ -153,7 +153,6 @@ public class GridCursor : MonoBehaviour
     }
 
 
-
     private bool IsCursorValidForCommodity(GridPropertyDetails gridPropertyDetails)
     {
         return gridPropertyDetails.canDropItem;
@@ -215,7 +214,7 @@ public class GridCursor : MonoBehaviour
             default:
                 return false;
         }
-        //return gridPropertyDetails.canDropItem;
+        return gridPropertyDetails.canDropItem;
     }
 
 
