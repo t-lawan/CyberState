@@ -54,3 +54,9 @@ MonoBehaviour:
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
+  - prefab: {fileID: 7513718978808958960, guid: 55082763912bb44199f8a8834b79402a,
+      type: 3}
+    numberToInstatiateAtBeginning: 10
+    minNumberToInstatiateEachDay: 0
+    maxNumberToInstatiateEachDay: 0
+    sceneName: 3
