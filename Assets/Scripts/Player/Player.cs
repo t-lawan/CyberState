@@ -11,6 +11,7 @@ public class Player : SingletonMonoBehaviour<Player>
     private AnimationOverrides animationOverrides;
 
     private GridCursor gridCursor;
+    private Cursor cursor;
     // Movement Parameters
     private float xInput;
     private float yInput;
@@ -79,6 +80,8 @@ public class Player : SingletonMonoBehaviour<Player>
     private void Start()
     {
         gridCursor = FindObjectOfType<GridCursor>();
+        cursor = FindObjectOfType<Cursor>();
+        
         useToolAnimationPause = new WaitForSeconds(Settings.useToolAnimationPause);
         liftToolAnimationPause = new WaitForSeconds(Settings.liftToolAnimationPause);
         afterUseToolAnimationPause = new WaitForSeconds(Settings.afterUseToolAnimationPause);
@@ -94,7 +97,7 @@ public class Player : SingletonMonoBehaviour<Player>
             ResetAnimationTriggers();
             PlayerMovementInput();
             PlayerWalkInput();
-            //PlayerClickInput();
+            PlayerClickInput();
 
             PlayerTestInput();
             SendMovementEventToListeners();
@@ -223,7 +226,7 @@ public class Player : SingletonMonoBehaviour<Player>
             if (Input.GetMouseButton(0))
             {
 
-                if (gridCursor.CursorIsEnabled)
+                if (gridCursor.CursorIsEnabled || cursor.CursorIsEnabled)
                 {
                     Vector3Int cursorGridPosition = gridCursor.GetGridPositionForCursor();
                     Vector3Int playerGridPosition = gridCursor.GetGridPositionForPlayer();
@@ -261,8 +264,9 @@ public class Player : SingletonMonoBehaviour<Player>
                     }
                     break;
                 case ItemType.Watering_Tool:
-                    ProcessPlayerClickInputTool(gridPropertyDetails, itemDetails, playerDirection);
-                    break;
+                case ItemType.Reaping_Tool:
+                case ItemType.Collecting_Tool:
+                case ItemType.Fixing_Tool:
                 case ItemType.Hoeing_Tool:
                     ProcessPlayerClickInputTool(gridPropertyDetails, itemDetails, playerDirection);
                     break;
@@ -290,6 +294,13 @@ public class Player : SingletonMonoBehaviour<Player>
                 if (gridCursor.CursorPositionIsValid)
                 {
                     WaterGroundAtCursor(gridPropertyDetails, playerDirection);
+                }
+                break;
+            case ItemType.Reaping_Tool:
+                if (cursor.CursorPositionIsValid)
+                {
+                    playerDirection = GetPlayerDirection(cursor.GetWorldPositionForCursor(), GetPlayerCenterPosition());
+                    ReapInPlayerDirectionAtCursor(itemDetails, playerDirection);
                 }
                 break;
             default:
@@ -404,6 +415,99 @@ public class Player : SingletonMonoBehaviour<Player>
 
     }
 
+    private void ReapInPlayerDirectionAtCursor(ItemDetails itemDetails, Vector3Int playerDirection)
+    {
+        StartCoroutine(ReapInPlayerDirectionAtCursorRoutine(itemDetails, playerDirection));
+
+    }
+
+    private IEnumerator ReapInPlayerDirectionAtCursorRoutine(ItemDetails itemDetails, Vector3Int playerDirection)
+    {
+        PlayerInputIsDisabled = true;
+        playerToolUseDisabled = true;
+
+        toolCharacterAttribute.partVariantType = PartVariantType.scythe;
+        characterAttributeCustomisationList.Clear();
+        characterAttributeCustomisationList.Add(toolCharacterAttribute);
+        animationOverrides.ApplyCharacterCustomisationParameters(characterAttributeCustomisationList);
+
+        UseToolInPlayerDirection(itemDetails, playerDirection);
+
+        yield return useToolAnimationPause;
+
+        PlayerInputIsDisabled = false;
+        playerToolUseDisabled = false;
+
+    }
+    private void UseToolInPlayerDirection(ItemDetails itemDetails, Vector3Int playerDirection)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            switch (itemDetails.itemType)
+            {
+                case ItemType.Reaping_Tool:
+                    if (playerDirection == Vector3Int.right)
+                    {
+                        isSwingingToolRight = true;
+                    }
+                    else if (playerDirection == Vector3Int.left)
+                    {
+                        isSwingingToolLeft = true;
+
+                    }
+                    else if (playerDirection == Vector3Int.up)
+                    {
+                        isSwingingToolUp = true;
+
+                    }
+                    else if (playerDirection == Vector3Int.down)
+                    {
+                        isSwingingToolDown = true;
+
+                    }
+                    break;
+            }
+
+            Vector2 point = new Vector2(
+               GetPlayerCenterPosition().x + (playerDirection.x * (itemDetails.itemUseRadius / 2f)),
+                GetPlayerCenterPosition().y + (playerDirection.y * (itemDetails.itemUseRadius / 2f)));
+
+            Vector2 size = new Vector2(itemDetails.itemUseRadius, itemDetails.itemUseRadius);
+
+            Item[] itemArray = HelperMethods.GetComponentsAtBoxLocationNonAlloc<Item>(Settings.maxCollidersToTestPerReapSwing, point, size, 0f);
+
+            int repeableItemCount = 0;
+
+            for (int i = itemArray.Length - 1; i >= 0; i--)
+            {
+                if (itemArray[i] != null)
+                {
+                    if (InventoryManager.Instance.GetItemDetails(itemArray[i].ItemCode).itemType == ItemType.Reapable_scenery)
+                    {
+                        Vector3 effectPosition = new Vector3(
+                            itemArray[i].transform.position.x,
+                            itemArray[i].transform.position.y + Settings.gridCellSize / 2f,
+                            itemArray[i].transform.position.z
+                        );
+
+                        //EventHandler.CallHarvestActionEffectEvent(effectPosition, HarvestActionEffect.reaping);
+
+
+
+                        Destroy(itemArray[i].gameObject);
+
+                        repeableItemCount++;
+                        if (repeableItemCount >= Settings.maxTargetComponetsToDestroy)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
     private Vector3Int GetPlayerClickDirection(Vector3Int cursorGridPosition, Vector3Int playerGridPosition)
     {
         if (cursorGridPosition.x > playerGridPosition.x)
@@ -422,6 +526,40 @@ public class Player : SingletonMonoBehaviour<Player>
         {
             return Vector3Int.down;
         }
+    }
+
+    private Vector3Int GetPlayerDirection(Vector3 cursorPosition, Vector3 playerPosition)
+    {
+        if (
+            cursorPosition.x > playerPosition.x
+            &&
+            cursorPosition.y < (playerPosition.y + cursor.ItemUseRadius / 2f)
+            &&
+            cursorPosition.y > (playerPosition.y - cursor.ItemUseRadius / 2f))
+        {
+            return Vector3Int.right;
+        }
+        else if (
+          cursorPosition.x < playerPosition.x
+          &&
+          cursorPosition.y < (playerPosition.y + cursor.ItemUseRadius / 2f)
+          &&
+          cursorPosition.y > (playerPosition.y - cursor.ItemUseRadius / 2f)
+          )
+        {
+            return Vector3Int.left;
+
+        }
+        else if (cursorPosition.y > playerPosition.y)
+        {
+            return Vector3Int.up;
+        }
+        else
+        {
+            return Vector3Int.down;
+
+        }
+
     }
 
     private void ProcessPlayerClickInputCommidity(ItemDetails itemDetails)

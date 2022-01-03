@@ -25,7 +25,7 @@ MonoBehaviour:
     canBePickedUp: 1
     canBeDropped: 0
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 10001
     itemType: 3
     itemDescription: A Basic Hoe
@@ -50,7 +50,7 @@ MonoBehaviour:
     canBePickedUp: 1
     canBeDropped: 0
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 10003
     itemType: 6
     itemDescription: 'Reaping Tool '
@@ -99,13 +99,13 @@ MonoBehaviour:
     canBePickedUp: 0
     canBeDropped: 1
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 10007
     itemType: 0
     itemDescription: Sentient Plant Egg
     itemSprite: {fileID: 21300000, guid: 3bd4f721cce0d448086247c259325149, type: 3}
     itemLongDescription: This is an egg for the sentient plant
-    itemUseGridRadius: 0
+    itemUseGridRadius: 2
     itemUseRadius: 0
     isStartingItem: 0
     canBePickedUp: 1
@@ -136,7 +136,7 @@ MonoBehaviour:
     canBePickedUp: 1
     canBeDropped: 0
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 10010
     itemType: 4
     itemDescription: Hammer
@@ -148,7 +148,7 @@ MonoBehaviour:
     canBePickedUp: 1
     canBeDropped: 0
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 10011
     itemType: 9
     itemDescription: Building A
@@ -203,19 +203,19 @@ MonoBehaviour:
     itemSprite: {fileID: 21300000, guid: 742d5b79980344d468c5b0da42a416c6, type: 3}
     itemLongDescription: Cowrie shell
     itemUseGridRadius: 0
-    itemUseRadius: 0
-    isStartingItem: 1
+    itemUseRadius: 3
+    isStartingItem: 0
     canBePickedUp: 1
     canBeDropped: 1
     canBeEaten: 0
-    canBeCarried: 0
+    canBeCarried: 1
   - itemCode: 10016
     itemType: 9
     itemDescription: Bush House
     itemSprite: {fileID: 21300000, guid: ac45825bf5d544d408799d13295d7927, type: 3}
-    itemLongDescription: Cowrie shell
+    itemLongDescription: 
     itemUseGridRadius: 0
-    itemUseRadius: 0
+    itemUseRadius: 3
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 1

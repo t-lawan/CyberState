@@ -169,6 +169,17 @@ public static class EventHandler
         }
     }
 
+    //Harvest Action Effect Event
+    //public static event Action<Vector3, HarvestActionEffect> HarvestActionEffectEvent;
+
+    //public static void CallHarvestActionEffectEvent(Vector3 effectPosition, HarvestActionEffect harvestActionEffect)
+    //{
+    //    if (HarvestActionEffectEvent != null)
+    //    {
+    //        HarvestActionEffectEvent(effectPosition, harvestActionEffect);
+    //    }
+    //}
+
 
 
 }

@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PersistentScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Scene_Bush.unity
+    guid: 5967c66f2dddc466faff1e74135bacd3
+  - enabled: 1
+    path: Assets/Scenes/Scene_Simulator.unity
+    guid: d4bade8536e1a41b9bdedcd0f6023f1e
+  - enabled: 1
+    path: Assets/Scenes/Scene_Astral.unity
+    guid: 5ce295818a5744197867d77a279605c9
   m_configObjects: {}
