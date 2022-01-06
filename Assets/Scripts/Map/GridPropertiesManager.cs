@@ -161,7 +161,6 @@ public class GridPropertiesManager : SingletonMonoBehaviour<GridPropertiesManage
         bool downDug = IsGridSquareDug(xGrid, yGrid - 1);
         bool leftDug = IsGridSquareDug(xGrid - 1, yGrid);
         bool rightDug = IsGridSquareDug(xGrid + 1, yGrid);
-        Debug.Log("upDug" + upDug.ToString());
         if (!upDug && !downDug && !rightDug && !leftDug)
         {
             return dugGround[0];

@@ -39,7 +39,6 @@ public class AnimationOverrides : MonoBehaviour
             string animatorSOAssetName = characterAttribute.characterPart.ToString();
             animatorSOAssetName = animatorSOAssetName[0].ToString().ToUpper() + animatorSOAssetName.Substring(1);
 
-            Debug.Log(animatorSOAssetName);
 
             Animator[] animatorsArray = character.GetComponentsInChildren<Animator>();
 
@@ -53,7 +52,6 @@ public class AnimationOverrides : MonoBehaviour
                 }
             }
 
-            Debug.Log(currentAnimator.runtimeAnimatorController.ToString());
 
             AnimatorOverrideController aoc = new AnimatorOverrideController(currentAnimator.runtimeAnimatorController);
 

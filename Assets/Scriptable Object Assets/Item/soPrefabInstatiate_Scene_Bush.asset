@@ -27,7 +27,7 @@ MonoBehaviour:
     sceneName: 0
   - prefab: {fileID: 5230101591938121987, guid: 36af3ea5278f44697925e0384ee33a3a,
       type: 3}
-    numberToInstatiateAtBeginning: 20
+    numberToInstatiateAtBeginning: 2
     minNumberToInstatiateEachDay: 1
     maxNumberToInstatiateEachDay: 3
     sceneName: 0
@@ -39,7 +39,7 @@ MonoBehaviour:
     sceneName: 0
   - prefab: {fileID: 8028603406778761631, guid: 7826aeda7eea240b5a5181852fa1d3ad,
       type: 3}
-    numberToInstatiateAtBeginning: 3
+    numberToInstatiateAtBeginning: 1
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
@@ -50,13 +50,13 @@ MonoBehaviour:
     sceneName: 0
   - prefab: {fileID: 8306749857398007898, guid: c3f8936fabeed48068fa19e9e86c5f42,
       type: 3}
-    numberToInstatiateAtBeginning: 3
+    numberToInstatiateAtBeginning: 2
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
   - prefab: {fileID: 7513718978808958960, guid: 55082763912bb44199f8a8834b79402a,
       type: 3}
-    numberToInstatiateAtBeginning: 10
+    numberToInstatiateAtBeginning: 4
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 3

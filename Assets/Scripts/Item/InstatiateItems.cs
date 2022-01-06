@@ -70,7 +70,6 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
     {
         Scene currentScene = SceneManager.GetActiveScene();
         string currentSceneName = currentScene.name;
-        Debug.Log(currentSceneName);
 
         //SceneName currentScene = SceneControllerManager.Instance.;
         for (int i = 0; i < itemPrefabs.prefabInstatiateList.Count; i++)
@@ -81,7 +80,11 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
                 if (ShouldBeCreatedInScene(itemPrefabs.prefabInstatiateList[i], currentSceneName))
                 {
                     Vector3 itemPosition = GetItemPositionInScene(itemPrefabs.prefabInstatiateList[i].sceneName);
-                    while (!CanPlaceItem(itemPrefabs.prefabInstatiateList[i].prefab.GetComponent<Item>(), itemPosition))
+                    
+                    while (
+                        !CanPlaceItem(itemPrefabs.prefabInstatiateList[i].prefab.GetComponent<Item>(), itemPosition) &&
+                        !IsThereAnItemAtTheLocation(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition)
+                        )
                     {
                         itemPosition = GetItemPositionInScene(itemPrefabs.prefabInstatiateList[i].sceneName);
                     }
@@ -94,6 +97,24 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
         }
 
+    }
+
+
+
+    private Vector2 GetSizeOfPrefab(GameObject prefab)
+    {
+        BoxCollider2D collider = prefab.GetComponent<BoxCollider2D>();
+        return collider.size;
+    }
+
+    private bool IsThereAnItemAtTheLocation(GameObject prefab, Vector3 itemPosition)
+    {
+        Vector2 point = new Vector2(itemPosition.x, itemPosition.y);
+        Vector2 size = GetSizeOfPrefab(prefab);
+
+        Item[] items = HelperMethods.GetComponentsAtBoxLocationNonAlloc<Item>(1, point, size, 0); ;
+        return false;
+        //return items.Length > 0;
     }
 
     private bool ShouldBeCreatedInScene(PrefabInstatiateStruct prefabInstatiateStruct, string sceneName)
@@ -114,30 +135,13 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     }
 
-    private bool ItemAlreadyExistsAtPosition(Vector3 pos)
-    {
-        if (parentItem == null)
-        {
-            return false;
-        }
-
-        bool itemExists = false;
-
-        //gridPropertyDetails
-        //for(int i=0; i < parentItem.childCount; i++)
-        //{
-        //    //parentItem.GetC
-        //}
-
-        return itemExists;
-    }
-
     private bool CanPlaceItem(Item item, Vector3 pos)
     {
-        bool canPlaceItem = true;
+        bool canPlaceItem = false;
 
         // Get Grid Property Details for Pos
         GridPropertyDetails gridPropertyDetails = GridPropertiesManager.Instance.GetGridPropertyDetails((int)pos.x, (int)pos.y);
+
         if (gridPropertyDetails != null)
         {
             // Get Item Details from Item
@@ -155,7 +159,17 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
                         }
                         break;
                     case ItemType.Commodity:
+                        if (gridPropertyDetails.canDropItem)
+                        {
+                            canPlaceItem = true;
+                        }
+                        break;
                     case ItemType.Reapable_scenery:
+                        if (gridPropertyDetails.canDropItem)
+                        {
+                            canPlaceItem = true;
+                        }
+                        break;
                     case ItemType.Seed:
                         if (gridPropertyDetails.canDropItem)
                         {
@@ -170,12 +184,26 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
         }
 
+        //if (!canPlaceItem)
+        //{
+        //    Debug.Log(item.name);
+
+        //    Debug.Log(canPlaceItem.ToString());
+
+        //}
 
 
         return canPlaceItem;
     }
 
+    private bool DoesItemInLocationExistAlready(ItemDetails itemDetails, Vector3 position)
+    {
+        Vector2 point = new Vector2(itemDetails.itemUseRadius, itemDetails.itemUseRadius);
+        Vector2 size = new Vector2(itemDetails.itemUseRadius, itemDetails.itemUseRadius);
 
+        Item[] itemArray = HelperMethods.GetComponentsAtBoxLocationNonAlloc<Item>(1, point, size, 0f);
+        return itemArray.Length > 0;
+    }
 
     private Vector3 GetRandomPosition()
     {
