@@ -6,17 +6,24 @@ public class Egregore : MonoBehaviour
 {
     public bool hasBeenTouched = false;
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        Debug.Log("Collided");
-    }
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        Debug.Log("Triggered");
+        Item item = collision.gameObject.GetComponent<Item>();
+        if(!hasBeenTouched && item != null && item.ItemCode == 10015)
+        {
+            hasBeenTouched = true;
+            Scene_Astral.Instance.ActivateEgregore();
+        }
+
     }
+
+    //public void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    Debug.Log(collision.gameObject.name);
+    //    Debug.Log("Triggered STay");
+    //}
     // Start is called before the first frame update
     void Start()
     {

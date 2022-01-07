@@ -15,11 +15,8 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
     public void FadeAndLoadScene(string sceneName, Vector3 spawnPosition)
     {
-        Debug.Log("XXX");
         if (!isFading)
         {
-            Debug.Log("YYY");
-
             StartCoroutine(FadeAndSwitchScenes(sceneName, spawnPosition));
         }
     }
