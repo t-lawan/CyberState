@@ -21,6 +21,32 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
         }
     }
 
+    public SceneName GetCurrentScene()
+    {
+       Scene scene =  SceneManager.GetActiveScene();
+
+        if(scene.name == SceneName.Scene_Bush.ToString())
+        {
+            return SceneName.Scene_Bush;
+        }
+        else if(scene.name == SceneName.Scene_Astral.ToString())
+        {
+            return SceneName.Scene_Astral;
+
+        }
+        else if (scene.name == SceneName.Scene_Simulator.ToString())
+        {
+            return SceneName.Scene_Simulator;
+
+        }
+        else if (scene.name == SceneName.Scene_Underground.ToString())
+        {
+            return SceneName.Scene_Underground;
+        }
+
+        return SceneName.Scene_Bush;
+    }
+
     private IEnumerator FadeAndSwitchScenes(string sceneName, Vector3 spawnPosition)
     {
         EventHandler.CallBeforeSceneUnloadFadeOutEvent();
@@ -90,4 +116,6 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
         faderCanvasGroup.blocksRaycasts = false;
     }
+
+    
 }

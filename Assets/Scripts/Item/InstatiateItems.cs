@@ -27,7 +27,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
     {
 
         EventHandler.AfterSceneLoadEvent += AfterSceneLoad;
-        EventHandler.AdvanceGameDayEvent -= AdvanceGameDay;
+        EventHandler.AdvanceGameDayEvent += AdvanceGameDay;
 
 
     }
@@ -44,68 +44,61 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         base.Awake();
     }
 
-    private void Start()
-    {
-
-    }
 
     private void InstantiateSceneItemsEachDay()
     {
+        string currentSceneName = GetSceneString();
+
         for (int i = 0; i < itemPrefabs.prefabInstatiateList.Count; i++)
         {
             int numberToInstatiate = (int)Random.Range(itemPrefabs.prefabInstatiateList[i].minNumberToInstatiateEachDay, itemPrefabs.prefabInstatiateList[i].maxNumberToInstatiateEachDay);
             for (int j = 0; j < numberToInstatiate; j++)
             {
-                Vector3 itemPosition = GetItemPositionInScene(itemPrefabs.prefabInstatiateList[i].sceneName);
-                while (!CanPlaceItem(itemPrefabs.prefabInstatiateList[i].prefab.GetComponent<Item>(), itemPosition))
-                {
-                    itemPosition = GetItemPositionInScene(itemPrefabs.prefabInstatiateList[i].sceneName);
-                }
-                CreateItemInSpace(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition);
+                InstatiateItem(itemPrefabs.prefabInstatiateList[i], currentSceneName);
             }
         }
     }
 
     private void InstantiateSceneItemsAtStartGame()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
-        string currentSceneName = currentScene.name;
+        string currentSceneName = GetSceneString();
 
         //SceneName currentScene = SceneControllerManager.Instance.;
         for (int i = 0; i < itemPrefabs.prefabInstatiateList.Count; i++)
         {
-
             for (int j = 0; j < itemPrefabs.prefabInstatiateList[i].numberToInstatiateAtBeginning; j++)
             {
-                if (ShouldBeCreatedInScene(itemPrefabs.prefabInstatiateList[i], currentSceneName))
-                {
-                    Vector3 itemPosition = GetItemPositionInScene(itemPrefabs.prefabInstatiateList[i].sceneName);
-                    
-                    while (
-                        !CanPlaceItem(itemPrefabs.prefabInstatiateList[i].prefab.GetComponent<Item>(), itemPosition) &&
-                        !IsThereAnItemAtTheLocation(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition)
-                        )
-                    {
-                        itemPosition = GetItemPositionInScene(itemPrefabs.prefabInstatiateList[i].sceneName);
-                    }
-                    CreateItemInSpace(itemPrefabs.prefabInstatiateList[i].prefab, itemPosition);
-                }
-
-
+                InstatiateItem(itemPrefabs.prefabInstatiateList[i], currentSceneName);
             }
-
-
         }
-
     }
 
-
-
-    private Vector2 GetSizeOfPrefab(GameObject prefab)
+    private string GetSceneString()
     {
-        BoxCollider2D collider = prefab.GetComponent<BoxCollider2D>();
-        return collider.size;
+        Scene currentScene = SceneManager.GetActiveScene();
+        return currentScene.name;
     }
+
+    private void InstatiateItem(PrefabInstatiateStruct obj, string currentSceneName)
+    {
+        if (ShouldBeCreatedInScene(obj, currentSceneName))
+        {
+            Vector3 itemPosition = GetItemPositionInScene(obj.sceneName);
+
+            while (
+                !CanPlaceItem(obj.prefab.GetComponent<Item>(), itemPosition) &&
+                !IsThereAnItemAtTheLocation(obj.prefab, itemPosition)
+                )
+            {
+                itemPosition = GetItemPositionInScene(obj.sceneName);
+            }
+            CreateItemInSpace(obj.prefab, itemPosition);
+        }
+    }
+
+
+
+
 
     private bool IsThereAnItemAtTheLocation(GameObject prefab, Vector3 itemPosition)
     {
@@ -115,6 +108,12 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         Item[] items = HelperMethods.GetComponentsAtBoxLocationNonAlloc<Item>(1, point, size, 0); ;
         return false;
         //return items.Length > 0;
+    }
+
+    private Vector2 GetSizeOfPrefab(GameObject prefab)
+    {
+        BoxCollider2D collider = prefab.GetComponent<BoxCollider2D>();
+        return collider.size;
     }
 
     private bool ShouldBeCreatedInScene(PrefabInstatiateStruct prefabInstatiateStruct, string sceneName)
@@ -236,8 +235,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     private void AdvanceGameDay(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
     {
-        Debug.Log("HI");
-        //InstantiateSceneItemsEachDay();
+        InstantiateSceneItemsEachDay();
     }
 
     private void AfterSceneLoad()

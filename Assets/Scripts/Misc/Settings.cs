@@ -12,9 +12,23 @@ public static class Settings
     //Tilemap
     public const float gridCellSize = 1f;
     public static Vector2 cursorSize = Vector2.one;
+    public const float gridCellDiagonalSize = 1.41f; // diagonal distance between unity cell centres
+    public const int maxGridWidth = 99999;
+    public const int maxGridHeight = 99999;
 
     //Player
     public static float playerCentreYOffset = 0.875f;
+
+    // NPC Animation Parameters
+    public static int walkUp;
+    public static int walkDown;
+    public static int walkLeft;
+    public static int walkRight;
+    public static int eventAnimation;
+
+    //NPC Movement
+    public static float pixelSize = 0.0625f;
+
     // Player Movement
 
     public const float runningSpeed = 5.33f;
@@ -27,8 +41,8 @@ public static class Settings
     // Inventory
     public static int playerInitialInventoryCapacity = 24;
     public static int playerMaximumInventoryCapacity = 48;
-    // Plater Animation Parameters
 
+    // Player Animation Parameters
     public static int xInput;
     public static int yInput;
 
@@ -81,6 +95,14 @@ public static class Settings
     // Constructor
     static Settings()
     {
+
+        // NPC Animation parameters
+        walkUp = Animator.StringToHash("walkUp");
+        walkDown = Animator.StringToHash("walkDown");
+        walkLeft = Animator.StringToHash("walkLeft");
+        walkRight = Animator.StringToHash("walkRight");
+        eventAnimation = Animator.StringToHash("eventAnimation");
+
         xInput = Animator.StringToHash("xInput");
         yInput = Animator.StringToHash("yInput");
 
