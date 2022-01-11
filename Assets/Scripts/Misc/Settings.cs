@@ -2,6 +2,8 @@
 
 public static class Settings
 {
+
+    public const float reproductionRate = 0.9f;
     //Scene
     public const string PersistentScene = "PersistentScene";
     // Obsuring Time Fading

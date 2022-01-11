@@ -169,6 +169,77 @@ public static class EventHandler
         }
     }
 
+    //NPC
+
+    public static event Action<float> NPCIncubateEvent;
+
+    public static void CallNPCIncubateEvent(float dnaValue)
+    {
+        if (NPCIncubateEvent != null)
+        {
+            NPCIncubateEvent(dnaValue);
+
+        }
+    }
+
+    public static event Action<string> NPCHasBeenBornEvent;
+
+    public static void CallNPCHasBeenBornEvent(string id)
+    {
+        if (NPCHasBeenBornEvent != null)
+        {
+            NPCHasBeenBornEvent(id);
+
+        }
+    }
+
+    public static event Action<string> NPCHasDiedEvent;
+
+    public static void CallNPCHasDiedEvent(string id)
+    {
+        if (NPCHasDiedEvent != null)
+        {
+            NPCHasDiedEvent(id);
+
+        }
+    }
+
+    // Schedule Event
+
+    public static event Action<NPCScheduleEvent> NPCSendScheduleEvent;
+
+    public static void CallNPCSendScheduleEvent(NPCScheduleEvent npcScheduleEvent)
+    {
+        if (NPCHasBeenBornEvent != null)
+        {
+            NPCSendScheduleEvent(npcScheduleEvent);
+
+        }
+    }
+
+    // DataManager
+
+    public static event Action DataIncrementNumberOfInteractions;
+
+    public static void CallDataIncrementNumberOfInteractions()
+    {
+        if (DataIncrementNumberOfInteractions != null)
+        {
+            DataIncrementNumberOfInteractions();
+
+        }
+    }
+
+    public static event Action DataIncrementNumberOfSeedsPlanted;
+
+    public static void CallDataIncrementNumberOfSeedsPlanted()
+    {
+        if (DataIncrementNumberOfInteractions != null)
+        {
+            DataIncrementNumberOfInteractions();
+
+        }
+    }
     //Harvest Action Effect Event
     //public static event Action<Vector3, HarvestActionEffect> HarvestActionEffectEvent;
 

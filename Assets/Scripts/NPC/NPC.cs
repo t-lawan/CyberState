@@ -4,12 +4,12 @@ using UnityEngine;
 
 [RequireComponent(typeof(NPCMovement))]
 [RequireComponent(typeof(GenerateGUID))]
+[RequireComponent(typeof(NPCDna))]
 public class NPC : MonoBehaviour, ISaveable
 {
     private WaitForSeconds afterUseToolAnimationPause;
     private WaitForSeconds afterLiftToolAnimationPause;
     private AnimationOverrides animationOverrides;
-
     private string _iSaveableUniqueID;
     public string ISaveableUniqueID { get { return _iSaveableUniqueID; } set { _iSaveableUniqueID = value; } }
 
@@ -17,6 +17,7 @@ public class NPC : MonoBehaviour, ISaveable
     public GameObjectSave GameObjectSave { get { return _gameObjectSave; } set { _gameObjectSave = value; } }
 
     private NPCMovement npcMovement;
+    private NPCDna dna;
 
     private void OnEnable()
     {
@@ -38,12 +39,41 @@ public class NPC : MonoBehaviour, ISaveable
     {
         // get npc movement component
         npcMovement = GetComponent<NPCMovement>();
+        dna = GetComponent<NPCDna>();
+        EventHandler.CallNPCHasBeenBornEvent(ISaveableUniqueID);
     }
 
     public void ISaveableDeregister()
     {
         SaveLoadManager.Instance.iSaveableObjectList.Remove(this);
     }
+
+    public void Reproduce()
+    {
+        float val = UnityEngine.Random.Range(0.0f, 1.0f);
+
+        if (Mathf.Abs((val + dna.value) / 2) > Settings.reproductionRate)
+        {
+            Debug.Log("REPRODUCE");
+            EventHandler.CallNPCIncubateEvent(dna.value);
+            dna.Mutate();
+
+        }
+        // Will send message to produce 
+    }
+
+    public void Die()
+    {
+        EventHandler.CallNPCHasDiedEvent(ISaveableUniqueID);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        EventHandler.CallDataIncrementNumberOfInteractions();
+        Debug.Log("HAS COLLIDDED");
+        Reproduce();
+    }
+
 
     public void ISaveableLoad(GameSave gameSave)
     {

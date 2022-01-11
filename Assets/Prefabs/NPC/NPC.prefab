@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 5052403567972218254}
   - component: {fileID: 307590396397555523}
   - component: {fileID: 5935024920569193592}
+  - component: {fileID: 5171806800541073515}
   - component: {fileID: 8213908035671359093}
   - component: {fileID: 1418990173735445897}
   m_Layer: 0
@@ -1057,6 +1058,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b92e3d0b51b9943d88d6d38be2c7864d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5171806800541073515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8186270803999792938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aee7e31542cf48abb3f364a2e538358, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 0
 --- !u!114 &8213908035671359093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1081,6 +1095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e33e06395f494da6bc636306a5b8683, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  so_NPCScheduleEventList: {fileID: 0}
 --- !u!1 &8186270804327985632
 GameObject:
   m_ObjectHideFlags: 0
