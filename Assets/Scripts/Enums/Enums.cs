@@ -2,6 +2,10 @@
 {
     none = 0,
     effectFootstepSoftGround = 10,
+    effectFootstepOne = 12,
+    effectFootstepTwo = 14,
+    effectFootstepThree = 16,
+    effectFootstepFour = 18,
     effectFootstepHardGround = 20,
     effectAxe = 30,
     effectPickaxe = 40,

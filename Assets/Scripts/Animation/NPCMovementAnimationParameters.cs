@@ -72,6 +72,27 @@ public class NPCMovementAnimationParameters : MonoBehaviour
 
     private void AnimationEventPlayFootstepSound()
     {
-        AudioManager.Instance.PlaySound(SoundName.effectFootstepHardGround);
+        int val = Random.Range(1, 4);
+        SoundName sound = SoundName.effectFootstepOne;
+        if (val == 1)
+        {
+            sound = SoundName.effectFootstepOne;
+        }
+        else if (val == 2)
+        {
+            sound = SoundName.effectFootstepTwo;
+
+        }
+        else if (val == 3)
+        {
+            sound = SoundName.effectFootstepThree;
+
+        }
+        else if (val == 4)
+        {
+            sound = SoundName.effectFootstepFour;
+
+        }
+        AudioManager.Instance.PlaySound(sound);
     }
 }
