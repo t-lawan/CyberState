@@ -310,6 +310,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void WaterGroundAtCursor(GridPropertyDetails gridPropertyDetails, Vector3Int playerDirection)
     {
+        AudioManager.Instance.PlaySound(SoundName.effectWateringCan);
+
         StartCoroutine(WaterGroundAtCursorRoutine(playerDirection, gridPropertyDetails));
 
     }
@@ -364,6 +366,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void HoeGroundAtCursor(GridPropertyDetails gridPropertyDetails, Vector3Int playerDirection)
     {
+        AudioManager.Instance.PlaySound(SoundName.effectHoe);
+
         StartCoroutine(HoeGroundAtCursorRoutine(playerDirection, gridPropertyDetails));
     }
 
@@ -417,6 +421,8 @@ public class Player : SingletonMonoBehaviour<Player>
 
     private void ReapInPlayerDirectionAtCursor(ItemDetails itemDetails, Vector3Int playerDirection)
     {
+        AudioManager.Instance.PlaySound(SoundName.effectScythe);
+
         StartCoroutine(ReapInPlayerDirectionAtCursorRoutine(itemDetails, playerDirection));
 
     }

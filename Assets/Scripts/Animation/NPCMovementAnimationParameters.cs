@@ -69,8 +69,9 @@ public class NPCMovementAnimationParameters : MonoBehaviour
             animator.SetTrigger(Settings.idleRight);
     }
 
+
     private void AnimationEventPlayFootstepSound()
     {
-
+        AudioManager.Instance.PlaySound(SoundName.effectFootstepHardGround);
     }
 }

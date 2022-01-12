@@ -25,6 +25,12 @@ public class ItemNudge : MonoBehaviour
                 StartCoroutine(RotateClock());
 
             }
+            if(collision.gameObject.tag == "Player")
+            {
+                AudioManager.Instance.PlaySound(SoundName.effectRustle);
+
+            }
+
         }
     }
 
@@ -42,6 +48,12 @@ public class ItemNudge : MonoBehaviour
                 StartCoroutine(RotateClock());
 
             }
+            if (collision.gameObject.tag == "Player")
+            {
+                AudioManager.Instance.PlaySound(SoundName.effectRustle);
+
+            }
+
         }
     }
 
