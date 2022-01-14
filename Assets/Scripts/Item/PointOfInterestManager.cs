@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PointOfInterestManager : SingletonMonoBehaviour<PointOfInterestManager>
 {
-    public Dictionary<PointOfInterestType, List<Vector3>> pointsOfInterestInBush;
+    public Dictionary<PointOfInterestType, List<Vector3>> pointsOfInterest;
     // Start is called before the first frame update
     protected override void Awake()
     {
         base.Awake();
-        pointsOfInterestInBush = new Dictionary<PointOfInterestType, List<Vector3>>();
+        pointsOfInterest = new Dictionary<PointOfInterestType, List<Vector3>>();
     }
 
     public void AddPointOfInterest(PointOfInterestType pointOfInterestType, Vector3 position)
@@ -42,31 +42,31 @@ public class PointOfInterestManager : SingletonMonoBehaviour<PointOfInterestMana
     {
         
         // If it doesn't already exist
-        if (!pointsOfInterestInBush.ContainsKey(pointOfInterestType))
+        if (!pointsOfInterest.ContainsKey(pointOfInterestType))
         {
             // Createe empty List
             List<Vector3> vectors = new List<Vector3>();
                 vectors.Add(position);
-                pointsOfInterestInBush.Add(pointOfInterestType, vectors);
+            pointsOfInterest.Add(pointOfInterestType, vectors);
         }
         else
         {
             List<Vector3> vectors;
-            if(pointsOfInterestInBush.TryGetValue(pointOfInterestType, out vectors))
+            if(pointsOfInterest.TryGetValue(pointOfInterestType, out vectors))
             {
                 vectors.Add(position);
-                pointsOfInterestInBush[pointOfInterestType] = vectors;
+                pointsOfInterest[pointOfInterestType] = vectors;
             }
         }
     }
 
     public Vector2Int GetCoordinateForPointOfInterest(PointOfInterestType pointOfInterestType)
     {
-        if (pointsOfInterestInBush.ContainsKey(pointOfInterestType))
+        if (pointsOfInterest.ContainsKey(pointOfInterestType))
         {
             List<Vector3> vectors;
 
-            pointsOfInterestInBush.TryGetValue(pointOfInterestType, out vectors);
+            pointsOfInterest.TryGetValue(pointOfInterestType, out vectors);
             int index = Random.Range(0, vectors.Count);
             Vector3 pos = vectors[index];
             int x = Random.Range(-3, 3) + (int)pos.x;

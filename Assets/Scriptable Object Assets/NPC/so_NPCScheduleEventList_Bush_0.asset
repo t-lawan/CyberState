@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f48e342769db343ba8971dfdb6b0391b, type: 3}
-  m_Name: so_NPCScheduleEventList_Test
+  m_Name: so_NPCScheduleEventList_Bush_0
   m_EditorClassIdentifier: 
   npcScheduleEventList:
   - hour: 7
@@ -21,8 +21,8 @@ MonoBehaviour:
     season: 0
     toSceneName: 0
     toGridCoordinate:
-      x: -25
-      y: 1
+      x: 2
+      y: -23
     npcFacingDirectionAtDestination: 0
     animationAtDestination: {fileID: 0}
     animationType: 0
@@ -55,3 +55,59 @@ MonoBehaviour:
     animationAtDestination: {fileID: 0}
     animationType: 5
     pointOfInterest: 2
+  - hour: 12
+    minute: 0
+    priority: 0
+    day: 0
+    weather: 0
+    season: 0
+    toSceneName: 0
+    toGridCoordinate:
+      x: -20
+      y: 5
+    npcFacingDirectionAtDestination: 0
+    animationAtDestination: {fileID: 0}
+    animationType: 0
+    pointOfInterest: 1
+  - hour: 14
+    minute: 0
+    priority: 0
+    day: 0
+    weather: 0
+    season: 0
+    toSceneName: 0
+    toGridCoordinate:
+      x: -20
+      y: 5
+    npcFacingDirectionAtDestination: 0
+    animationAtDestination: {fileID: 0}
+    animationType: 5
+    pointOfInterest: 2
+  - hour: 15
+    minute: 30
+    priority: 0
+    day: 0
+    weather: 0
+    season: 0
+    toSceneName: 0
+    toGridCoordinate:
+      x: -20
+      y: 5
+    npcFacingDirectionAtDestination: 0
+    animationAtDestination: {fileID: 0}
+    animationType: 4
+    pointOfInterest: 2
+  - hour: 17
+    minute: 30
+    priority: 0
+    day: 0
+    weather: 0
+    season: 0
+    toSceneName: 0
+    toGridCoordinate:
+      x: -20
+      y: 5
+    npcFacingDirectionAtDestination: 0
+    animationAtDestination: {fileID: 0}
+    animationType: 0
+    pointOfInterest: 1

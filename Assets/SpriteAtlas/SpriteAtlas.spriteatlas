@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 10172068
+    totalSpriteSurfaceArea: 10274468
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -202,6 +202,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 2a6700e4157309649a1edb27b126da7c, type: 3}
   - {fileID: 21300000, guid: 89c46045b5f23d840b62099f6f1f6344, type: 3}
   - {fileID: 21300000, guid: 60f7a57556be87841a8cabc94054df28, type: 3}
+  - {fileID: 21300000, guid: b6595c85415e14da991a0d16e1aa7d6d, type: 3}
   - {fileID: 21300000, guid: 7700e9e59e6f58e4598ea8f2e5a84cc1, type: 3}
   - {fileID: 21300000, guid: 5eb84bf51d351da428f95a1296f6a397, type: 3}
   - {fileID: -3838475676277424314, guid: b8a1ee46b6ce11a4d8368beea7dd0051, type: 3}
@@ -1916,6 +1917,7 @@ SpriteAtlas:
   - InventoryPlayerGreyedOut
   - Transparent16x16
   - Table
+  - SimulationTile0
   - Stone
   - PineCone
   - Farmhouse1_33

@@ -5,32 +5,66 @@ using UnityEngine;
 public class NPCSchedule : MonoBehaviour
 {
     [SerializeField] private SO_NPCScheduleEventList so_NPCScheduleEventList = null;
+    [SerializeField] private SO_NPCScheduleEventList[] so_NPCScheduleEventList_Bush = null;
+    [SerializeField] private SO_NPCScheduleEventList[] so_NPCScheduleEventList_Simulation = null;
     private SortedSet<NPCScheduleEvent> npcScheduleEventSet;
     private NPCPath npcPath;
 
     private void Awake()
     {
         // Load NPC schedule event list into a sorted set
-        npcScheduleEventSet = new SortedSet<NPCScheduleEvent>(new NPCScheduleEventSort());
-
-        foreach (NPCScheduleEvent npcScheduleEvent in so_NPCScheduleEventList.npcScheduleEventList)
-        {
-            npcScheduleEventSet.Add(npcScheduleEvent);
-        }
-
+        LoadScheduleEvents();
         // Get NPC Path Component
         npcPath = GetComponent<NPCPath>();
+
+    }
+
+    private void LoadScheduleEvents()
+    {
+        npcScheduleEventSet = new SortedSet<NPCScheduleEvent>(new NPCScheduleEventSort());
+        SceneName sceneName = SceneControllerManager.Instance.GetCurrentScene();
+
+        SO_NPCScheduleEventList eventList = so_NPCScheduleEventList;
+        switch (sceneName)
+        {
+            case SceneName.Scene_Bush:
+                int index = Random.Range(0, so_NPCScheduleEventList_Bush.Length - 1);
+                eventList = so_NPCScheduleEventList_Bush[index];
+                break;
+            case SceneName.Scene_Simulator:
+                int ind = Random.Range(0, so_NPCScheduleEventList_Simulation.Length - 1);
+                eventList = so_NPCScheduleEventList_Simulation[ind];
+                break;
+        }
+
+        if(eventList != null)
+        {
+            foreach (NPCScheduleEvent npcScheduleEvent in so_NPCScheduleEventList.npcScheduleEventList)
+            {
+                npcScheduleEventSet.Add(npcScheduleEvent);
+            }
+        }
+
+
 
     }
 
     private void OnEnable()
     {
         EventHandler.AdvanceGameMinuteEvent += GameTimeSystem_AdvanceMinute;
+        EventHandler.AdvanceGameDayEvent += AdvanceGameDayEvent;
     }
 
     private void OnDisable()
     {
         EventHandler.AdvanceGameMinuteEvent -= GameTimeSystem_AdvanceMinute;
+        EventHandler.AdvanceGameDayEvent -= AdvanceGameDayEvent;
+
+    }
+
+    private void AdvanceGameDayEvent(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)
+    {
+        LoadScheduleEvents();
     }
 
     private void GameTimeSystem_AdvanceMinute(int gameYear, Season gameSeason, int gameDay, string gameDayOfWeek, int gameHour, int gameMinute, int gameSecond)

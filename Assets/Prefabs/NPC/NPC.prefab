@@ -939,7 +939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1031a32c6e8984214a92596704738645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gUID: 
+  _gUID: 34be4bf3-7104-4242-89b3-3c453535fcba
 --- !u!95 &833532383342210143
 Animator:
   serializedVersion: 3
@@ -1043,6 +1043,7 @@ MonoBehaviour:
   npcMinSpeed: 1
   npcMaxSpeed: 3
   npcTargetAnimationClip: {fileID: 0}
+  npcAnimationType: 0
   blankAnimation: {fileID: 0}
   npcActiveInScene: 0
 --- !u!114 &5171806800541073515
@@ -1084,6 +1085,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   so_NPCScheduleEventList: {fileID: 11400000, guid: 7e312f06c1adc474d91bb9835817a214,
     type: 2}
+  so_NPCScheduleEventList_Bush:
+  - {fileID: 11400000, guid: 7e312f06c1adc474d91bb9835817a214, type: 2}
+  - {fileID: 11400000, guid: 4a936d6080a5b4926a07ad850e42c53f, type: 2}
+  so_NPCScheduleEventList_Simulation:
+  - {fileID: 11400000, guid: f670e217adbcb4875baa95806843dd6b, type: 2}
+  - {fileID: 11400000, guid: 69bfd296976164e91b9db4e4a2d72551, type: 2}
 --- !u!1 &8186270804327985632
 GameObject:
   m_ObjectHideFlags: 0
