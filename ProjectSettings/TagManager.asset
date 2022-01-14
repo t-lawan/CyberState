@@ -8,6 +8,7 @@ TagManager:
   - ItemsParentTransform
   - GroundDecoration1
   - GroundDecoration2
+  - NPCParentTransform
   layers:
   - Default
   - TransparentFX

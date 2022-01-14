@@ -5,7 +5,7 @@ using UnityEngine;
 public class NPCScheduleManager : SingletonMonoBehaviour<NPCScheduleManager>
 {
     List<string> npcIDs;
-
+    //Dictionary<PointOfInterestType_Bush, V>
     protected override void Awake()
     {
         base.Awake();

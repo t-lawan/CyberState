@@ -56,6 +56,7 @@ public class NPC : MonoBehaviour, ISaveable
         {
             Debug.Log("REPRODUCE");
             EventHandler.CallNPCIncubateEvent(dna.value);
+            InstatiateItems.Instance.InstatiateHumanoidNPC();
             dna.Mutate();
 
         }
@@ -70,7 +71,6 @@ public class NPC : MonoBehaviour, ISaveable
     public void OnTriggerEnter2D(Collider2D collision)
     {
         EventHandler.CallDataIncrementNumberOfInteractions();
-        Debug.Log("HAS COLLIDDED");
         Reproduce();
     }
 

@@ -53,8 +53,6 @@ public class PoolManager : SingletonMonoBehaviour<PoolManager>
     public GameObject ReuseObject(GameObject prefab, Vector3 position, Quaternion rotation)
     {
         int poolKey = prefab.GetInstanceID();
-        Debug.Log(poolKey);
-        Debug.Log(poolDictionary.Count);
 
 
         if (poolDictionary.ContainsKey(poolKey))

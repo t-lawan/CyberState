@@ -46,11 +46,6 @@ public class NPCSchedule : MonoBehaviour
 
             if (npcScheduleEvent.Time == time)
             {
-
-                Debug.Log("----");
-
-                Debug.Log("HELLO");
-
                 // Time match now check if parameters match
                 if (npcScheduleEvent.day != 0 && npcScheduleEvent.day != gameDay)
                     continue;
@@ -61,7 +56,7 @@ public class NPCSchedule : MonoBehaviour
                 if (npcScheduleEvent.weather != Weather.none && npcScheduleEvent.weather != GameManager.Instance.currentWeather)
                     continue;
 
-                Debug.Log(npcScheduleEvent.ToString());
+                //Debug.Log(npcScheduleEvent.ToString());
                 //Schdule matches
                 // Debug.Log("Schedule Matches! " + npcScheduleEvent);
                 matchingNPCScheduleEvent = npcScheduleEvent;
@@ -76,6 +71,7 @@ public class NPCSchedule : MonoBehaviour
         // Now test is matchingSchedule!=null and do something;
         if (matchingNPCScheduleEvent != null)
         {
+            //Debug.Log("BUILDING");
             // Build path for matching schedule
             npcPath.BuildPath(matchingNPCScheduleEvent);
         }

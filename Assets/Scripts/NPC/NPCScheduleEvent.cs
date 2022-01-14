@@ -13,6 +13,8 @@ public class NPCScheduleEvent
     public GridCoordinate toGridCoordinate;
     public Direction npcFacingDirectionAtDestination = Direction.none;
     public AnimationClip animationAtDestination;
+    public AnimationType animationType = AnimationType.idle; 
+    public PointOfInterestType pointOfInterest;
 
     public int Time
     {
@@ -22,7 +24,7 @@ public class NPCScheduleEvent
         }
     }
 
-    public NPCScheduleEvent(int hour, int minute, int priority, int day, Weather weather, Season season, SceneName toSceneName, GridCoordinate toGridCoordinate, AnimationClip animationAtDestination)
+    public NPCScheduleEvent(int hour, int minute, int priority, int day, Weather weather, Season season, SceneName toSceneName, GridCoordinate toGridCoordinate, AnimationClip animationAtDestination, PointOfInterestType pointOfInterest)
     {
         this.hour = hour;
         this.minute = minute;
@@ -33,6 +35,7 @@ public class NPCScheduleEvent
         this.toSceneName = toSceneName;
         this.toGridCoordinate = toGridCoordinate;
         this.animationAtDestination = animationAtDestination;
+        this.pointOfInterest = pointOfInterest;
     }
 
     public NPCScheduleEvent()

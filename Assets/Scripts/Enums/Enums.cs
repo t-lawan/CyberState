@@ -38,6 +38,26 @@ public enum HarvestActionEffect
     none
 }
 
+public enum PointOfInterestType
+{
+    Exo_Womb,
+    Bush_Building,
+    Ore_To_Lube
+
+}
+
+public enum AnimationType
+{
+    idle,
+    walk,
+    run,
+    useTool,
+    swingTool,
+    liftTool,
+    holdTool,
+    pickUp
+}
+
 public enum AnimationName
 {
     idleDown,

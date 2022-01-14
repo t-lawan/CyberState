@@ -58,6 +58,8 @@ public class NPCMovement : MonoBehaviour
     private bool npcIsMoving = false;
 
     [HideInInspector] public AnimationClip npcTargetAnimationClip;
+    [HideInInspector] public AnimationType npcAnimationType = AnimationType.idle;
+
 
     [Header("NPC Animation")]
     [SerializeField] private AnimationClip blankAnimation = null;
@@ -105,6 +107,7 @@ public class NPCMovement : MonoBehaviour
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        grid = GameObject.FindObjectOfType<Grid>();
         //animator = GetComponent<Animator>();
         npcPath = GetComponent<NPCPath>();
         //spriteRenderer = GetComponent<SpriteRenderer>();
@@ -120,6 +123,14 @@ public class NPCMovement : MonoBehaviour
         npcTargetScene = npcCurrentScene;
         npcTargetGridPosition = npcCurrentGridPosition;
         npcTargetWorldPosition = transform.position;
+
+        if (!npcInitialised)
+        {
+            InitialiseNPC();
+            npcInitialised = true;
+        }
+
+        sceneLoaded = true;
     }
 
     // Start is called before the first frame update
@@ -137,8 +148,11 @@ public class NPCMovement : MonoBehaviour
     {
         if (sceneLoaded)
         {
+            //Debug.Log("sceneLoaded");
+
             if (npcIsMoving == false)
             {
+
                 // set npc current and next grid position - to take into account the npc might be animating
                 npcCurrentGridPosition = GetGridPosition(transform.position);
                 npcNextGridPosition = npcCurrentGridPosition;
@@ -165,7 +179,7 @@ public class NPCMovement : MonoBehaviour
                     if (npcCurrentScene.ToString() == SceneManager.GetActiveScene().name)
                     {
                         SetNPCActiveInScene();
-                        isWalking = true;
+                        //isWalking = true;
                         npcMovementStep = npcPath.npcMovementStepStack.Pop();
 
                         npcNextGridPosition = (Vector3Int)npcMovementStep.gridCoordinate;
@@ -208,7 +222,7 @@ public class NPCMovement : MonoBehaviour
 
                     SetNPCFacingDirection();
 
-                    //SetNPCEventAnimation();
+                    SetNPCEventAnimation();
                 }
             }
         }
@@ -216,27 +230,109 @@ public class NPCMovement : MonoBehaviour
 
     public void SetScheduleEventDetails(NPCScheduleEvent npcScheduleEvent)
     {
+        //Debug.Log("SetScheduleEventDetails");
+
         npcTargetScene = npcScheduleEvent.toSceneName;
         npcTargetGridPosition = (Vector3Int)npcScheduleEvent.toGridCoordinate;
         npcTargetWorldPosition = GetWorldPosition(npcTargetGridPosition);
+        //npcFacingDirectionAtDestination = (Direction) UnityEngine.Random.Range(0, 5);
         npcFacingDirectionAtDestination = npcScheduleEvent.npcFacingDirectionAtDestination;
         npcTargetAnimationClip = npcScheduleEvent.animationAtDestination;
+
+        npcAnimationType = npcScheduleEvent.animationType;
         ClearNPCEventAnimation();
     }
 
     private void SetNPCEventAnimation()
     {
-        //if (npcTargetAnimationClip != null)
-        //{
-        //    ResetIdleAnimation();
-        //    //animatorOverrideController[blankAnimation] = npcTargetAnimationClip;
-        //    //animator.SetBool(Settings.eventAnimation, true);
-        //}
-        //else
-        //{
-        //    //animatorOverrideController[blankAnimation] = blankAnimation;
-        //    //animator.SetBool(Settings.eventAnimation, false);
-        //}
+
+            ResetIdleAnimation();
+            switch (npcAnimationType)
+            {
+                case AnimationType.idle:
+                    isIdle = true;
+                    break;
+                case AnimationType.holdTool:
+
+                    break;
+                case AnimationType.liftTool:
+                    switch (direction)
+                    {
+                        case Direction.up:
+                            isLiftingToolUp = true;
+                            break;
+                        case Direction.down:
+                            isLiftingToolDown = true;
+                            break;
+                        case Direction.left:
+                            isLiftingToolLeft = true;
+                            break;
+                        case Direction.right:
+                            isLiftingToolRight = true;
+                            break;
+                    }
+                    break;
+                case AnimationType.pickUp:
+                    switch (direction)
+                    {
+                        case Direction.up:
+                            isPickingUp = true;
+                            break;
+                        case Direction.down:
+                            isPickingDown = true;
+                            break;
+                        case Direction.left:
+                            isPickingLeft = true;
+                            break;
+                        case Direction.right:
+                            isPickingRight = true;
+                            break;
+                    }
+                    break;
+                case AnimationType.swingTool:
+                    switch (direction)
+                    {
+                        case Direction.up:
+                            isSwingingToolUp = true;
+                            break;
+                        case Direction.down:
+                            isSwingingToolDown = true;
+                            break;
+                        case Direction.left:
+                            isSwingingToolLeft = true;
+                            break;
+                        case Direction.right:
+                            isSwingingToolRight = true;
+                            break;
+                    }
+                    break;
+                case AnimationType.useTool:
+                    switch (direction)
+                    {
+                        case Direction.up:
+                            isUsingToolUp = true;
+                            break;
+                        case Direction.down:
+                            isUsingToolDown = true;
+                            break;
+                        case Direction.left:
+                            isUsingToolLeft = true;
+                            break;
+                        case Direction.right:
+                            isUsingToolRight = true;
+                            break;
+                    }
+                    break;
+                case AnimationType.walk:
+                    isWalking = true;
+                    break;
+
+            }
+            TriggerMovementAnimationParameterControl(0, 0);
+
+
+
+
     }
 
     public void ClearNPCEventAnimation()
@@ -298,7 +394,7 @@ public class NPCMovement : MonoBehaviour
 
     private void AfterSceneLoad()
     {
-        grid = GameObject.FindObjectOfType<Grid>();
+        //grid = GameObject.FindObjectOfType<Grid>();
 
         if (!npcInitialised)
         {
@@ -395,6 +491,8 @@ public class NPCMovement : MonoBehaviour
 
     private void MoveToGridPosition(Vector3Int gridPosition, TimeSpan npcMovementStepTime, TimeSpan gameTime)
     {
+
+
         moveToGridPositionRoutine = StartCoroutine(MoveToGridPositionRoutine(gridPosition, npcMovementStepTime, gameTime));
     }
 
@@ -432,10 +530,10 @@ public class NPCMovement : MonoBehaviour
 
         //ResetMoveAnimation();
         //ResetIdleAnimation();
-        Debug.Log(isWalking);
-        Debug.Log("---------");
+        //Debug.Log(isWalking);
+        //Debug.Log("---------");
 
-        Debug.Log(isIdle);
+        //Debug.Log(isIdle);
         rigidBody2D.position = npcNextWorldPosition;
         npcCurrentGridPosition = gridPosition;
         npcNextGridPosition = npcCurrentGridPosition;
@@ -490,10 +588,10 @@ public class NPCMovement : MonoBehaviour
         }
 
         // Reset idle animation
-        ResetIdleAnimation();
+        //ResetIdleAnimation();
 
         // Reset move animation
-        ResetMoveAnimation();
+        //ResetMoveAnimation();
     }
 
     private void TriggerMovementAnimationParameterControl(float x, float y)
@@ -511,7 +609,7 @@ false, false, false, false
 
     private void SetIdleAnimation()
     {
-        isIdle = true;
+        //isIdle = true;
     }
 
     private void ResetMoveAnimation()
@@ -522,8 +620,8 @@ false, false, false, false
     private void ResetMovement()
     {
         isRunning = false;
-        isWalking = false;
-        isIdle = true;
+        //isWalking = false;
+        //isIdle = true;
         TriggerMovementAnimationParameterControl(0, 0);
     }
 

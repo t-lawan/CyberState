@@ -48,7 +48,6 @@ public class InstructionsPanel : SingletonMonoBehaviour<InstatiateItems>
 
 
         float fadeSpeed = Mathf.Abs(instructionsText.alpha - finalAlpha) / fadeDuration;
-        Debug.Log(fadeSpeed);
 
         while (!Mathf.Approximately(instructionsText.alpha, finalAlpha))
         {

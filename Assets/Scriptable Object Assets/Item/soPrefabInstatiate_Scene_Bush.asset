@@ -39,7 +39,7 @@ MonoBehaviour:
     sceneName: 0
   - prefab: {fileID: 8028603406778761631, guid: 7826aeda7eea240b5a5181852fa1d3ad,
       type: 3}
-    numberToInstatiateAtBeginning: 1
+    numberToInstatiateAtBeginning: 3
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0

@@ -27,71 +27,73 @@ public class NPCPath : MonoBehaviour
         // If schedule event is for the same scene as the current NPC scene
         if (npcScheduleEvent.toSceneName == npcMovement.npcCurrentScene)
         {
+            //Debug.Log("BuildPath");
+
             Vector2Int npcCurrentGridPosition = (Vector2Int)npcMovement.npcCurrentGridPosition;
 
-            Vector2Int npcTargetGridPosition = (Vector2Int)npcScheduleEvent.toGridCoordinate;
-
+            Vector2Int npcTargetGridPosition = PointOfInterestManager.Instance.GetCoordinateForPointOfInterest(npcScheduleEvent.pointOfInterest);
+            npcScheduleEvent.toGridCoordinate = new GridCoordinate(npcTargetGridPosition.x, npcTargetGridPosition.y);
             // Build path and add movement steps to movement step stack
             NPCManager.Instance.BuildPath(npcScheduleEvent.toSceneName, npcCurrentGridPosition, npcTargetGridPosition, npcMovementStepStack);
 
 
         }
-        // else if the schedule event is for a location in another scene
-        else if (npcScheduleEvent.toSceneName != npcMovement.npcCurrentScene)
-        {
-            SceneRoute sceneRoute;
+        //// else if the schedule event is for a location in another scene
+        //else if (npcScheduleEvent.toSceneName != npcMovement.npcCurrentScene)
+        //{
+        //    SceneRoute sceneRoute;
 
-            // Get scene route matchingSchedule
-            sceneRoute = NPCManager.Instance.GetSceneRoute(npcMovement.npcCurrentScene.ToString(), npcScheduleEvent.toSceneName.ToString());
+        //    // Get scene route matchingSchedule
+        //    sceneRoute = NPCManager.Instance.GetSceneRoute(npcMovement.npcCurrentScene.ToString(), npcScheduleEvent.toSceneName.ToString());
 
-            // Has a valid scene route been found?
-            if (sceneRoute != null)
-            {
-                // Loop through scene paths in reverse order
+        //    // Has a valid scene route been found?
+        //    if (sceneRoute != null)
+        //    {
+        //        // Loop through scene paths in reverse order
 
-                for (int i = sceneRoute.scenePathList.Count - 1; i >= 0; i--)
-                {
-                    int toGridX, toGridY, fromGridX, fromGridY;
+        //        for (int i = sceneRoute.scenePathList.Count - 1; i >= 0; i--)
+        //        {
+        //            int toGridX, toGridY, fromGridX, fromGridY;
 
-                    ScenePath scenePath = sceneRoute.scenePathList[i];
+        //            ScenePath scenePath = sceneRoute.scenePathList[i];
 
-                    // Check if this is the final destination
-                    if (scenePath.toGridCell.x >= Settings.maxGridWidth || scenePath.toGridCell.y >= Settings.maxGridHeight)
-                    {
-                        // If so use final destination grid cell
-                        toGridX = npcScheduleEvent.toGridCoordinate.x;
-                        toGridY = npcScheduleEvent.toGridCoordinate.y;
-                    }
-                    else
-                    {
-                        // else use scene path to position
-                        toGridX = scenePath.toGridCell.x;
-                        toGridY = scenePath.toGridCell.y;
-                    }
+        //            // Check if this is the final destination
+        //            if (scenePath.toGridCell.x >= Settings.maxGridWidth || scenePath.toGridCell.y >= Settings.maxGridHeight)
+        //            {
+        //                // If so use final destination grid cell
+        //                toGridX = npcScheduleEvent.toGridCoordinate.x;
+        //                toGridY = npcScheduleEvent.toGridCoordinate.y;
+        //            }
+        //            else
+        //            {
+        //                // else use scene path to position
+        //                toGridX = scenePath.toGridCell.x;
+        //                toGridY = scenePath.toGridCell.y;
+        //            }
 
-                    // Check if this is the starting position
-                    if (scenePath.fromGridCell.x >= Settings.maxGridWidth || scenePath.fromGridCell.y >= Settings.maxGridHeight)
-                    {
-                        // if so use npc position
-                        fromGridX = npcMovement.npcCurrentGridPosition.x;
-                        fromGridY = npcMovement.npcCurrentGridPosition.y;
-                    }
-                    else
-                    {
-                        // else use scene path from position
-                        fromGridX = scenePath.fromGridCell.x;
-                        fromGridY = scenePath.fromGridCell.y;
-                    }
+        //            // Check if this is the starting position
+        //            if (scenePath.fromGridCell.x >= Settings.maxGridWidth || scenePath.fromGridCell.y >= Settings.maxGridHeight)
+        //            {
+        //                // if so use npc position
+        //                fromGridX = npcMovement.npcCurrentGridPosition.x;
+        //                fromGridY = npcMovement.npcCurrentGridPosition.y;
+        //            }
+        //            else
+        //            {
+        //                // else use scene path from position
+        //                fromGridX = scenePath.fromGridCell.x;
+        //                fromGridY = scenePath.fromGridCell.y;
+        //            }
 
-                    Vector2Int fromGridPosition = new Vector2Int(fromGridX, fromGridY);
+        //            Vector2Int fromGridPosition = new Vector2Int(fromGridX, fromGridY);
 
-                    Vector2Int toGridPosition = new Vector2Int(toGridX, toGridY);
+        //            Vector2Int toGridPosition = new Vector2Int(toGridX, toGridY);
 
-                    // Build path and add movement steps to movement step stack
-                    NPCManager.Instance.BuildPath(scenePath.sceneName, fromGridPosition, toGridPosition, npcMovementStepStack);
-                }
-            }
-        }
+        //            // Build path and add movement steps to movement step stack
+        //            NPCManager.Instance.BuildPath(scenePath.sceneName, fromGridPosition, toGridPosition, npcMovementStepStack);
+        //        }
+        //    }
+        //}
 
 
         // If stack count >1, update times and then pop off 1st item which is the starting position

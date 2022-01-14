@@ -16,10 +16,17 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 {
     [SerializeField] public SOPrefabInstatiate itemPrefabs = null;
     private Transform parentItem;
+    private Transform npcItem;
     [SerializeField] private SO_GridProperties[] so_GridPropertiesArray = null;
+    [SerializeField] private GameObject humanNoidPrefab;
+    [SerializeField] private int numberOfHumanoids;
     [SerializeField] public Vector3 minPos;
     [SerializeField] public Vector3 maxPos;
     [SerializeField] public Vector2 margin;
+
+    private bool sceneBushHasLoaded = false;
+    private bool sceneAstralHasLoaded = false;
+    private bool sceneSimulationHasLoaded = false;
 
 
 
@@ -96,10 +103,6 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         }
     }
 
-
-
-
-
     private bool IsThereAnItemAtTheLocation(GameObject prefab, Vector3 itemPosition)
     {
         Vector2 point = new Vector2(itemPosition.x, itemPosition.y);
@@ -128,9 +131,15 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         return false;
     }
 
-    private void CreateItemInSpace(GameObject prefab, Vector3 itemPosition)
+    private GameObject CreateItemInSpace(GameObject prefab, Vector3 itemPosition)
     {
-        GameObject itemGameObject = Instantiate(prefab, itemPosition, Quaternion.identity, parentItem);
+        return Instantiate(prefab, itemPosition, Quaternion.identity, parentItem);
+
+    }
+
+    private GameObject CreateItemInNPCs(GameObject prefab, Vector3 itemPosition)
+    {
+        return Instantiate(prefab, itemPosition, Quaternion.identity, npcItem);
 
     }
 
@@ -241,7 +250,53 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
     private void AfterSceneLoad()
     {
         parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParentTransform).transform;
-        InstantiateSceneItemsAtStartGame();
+        npcItem = GameObject.FindGameObjectWithTag(Tags.NPCParentTransform).transform;
 
+        SceneName currentSceneName = SceneControllerManager.Instance.GetCurrentScene();
+        switch (currentSceneName)
+        {
+            case SceneName.Scene_Bush:
+                if (!sceneBushHasLoaded)
+                {
+                    LoadItemsAndNPCs();
+                }
+                break;
+            case SceneName.Scene_Astral:
+                if (!sceneAstralHasLoaded)
+                {
+                    LoadItemsAndNPCs();
+                }
+                break;
+            case SceneName.Scene_Simulator:
+                if (!sceneSimulationHasLoaded)
+                {
+                    LoadItemsAndNPCs();
+                }
+                break;
+        }
+
+    }
+
+    private void LoadItemsAndNPCs()
+    {
+        InstantiateSceneItemsAtStartGame();
+        InstatiateHumanoidNPCs();
+    }
+
+
+    public void InstatiateHumanoidNPC()
+    {
+        Vector2Int vector2 = PointOfInterestManager.Instance.GetCoordinateForPointOfInterest(PointOfInterestType.Exo_Womb);
+            Vector3 pos = new Vector3(vector2.x, vector2.y);
+            CreateItemInNPCs(humanNoidPrefab, pos);
+
+    }
+
+    private void InstatiateHumanoidNPCs()
+    {
+        for (int i = 0; i < numberOfHumanoids; i++)
+        {
+            InstatiateHumanoidNPC();
+        }
     }
 }

@@ -68,10 +68,10 @@ public class ApplyCharacterCustomisation : MonoBehaviour
     [SerializeField] private int inputSex = 0;
 
     // Select Hair Color
-    [SerializeField] private Color inputHairColor = Color.black;
+    [SerializeField] private Color inputHairColor;
 
     // Select Trouser Color
-    [SerializeField] private Color inputTrouserColor = Color.blue;
+    [SerializeField] private Color inputTrouserColor;
 
 
     private Facing[,] bodyFacingArray;
@@ -292,14 +292,14 @@ public class ApplyCharacterCustomisation : MonoBehaviour
         // Farmer Shirt Pixels
         Color[] farmerShirtPixels = farmerBaseShirtsUpdated.GetPixels(0, 0, bodyColumns * farmerSpriteWidth, farmerBaseTexture.height);
         // Farmer Trouser Pixels
-        Color[] farmerTrouserPixelsSelection = farmerBaseCustomised.GetPixels(288, 0, 96, farmerBaseTexture.height);
+        //Color[] farmerTrouserPixelsSelection = farmerBaseCustomised.GetPixels(288, 0, 96, farmerBaseTexture.height);
         // Farmer Adornments Pixels
         Color[] farmerAdornmentsPixels = farmerBaseAdornmentsUpdated.GetPixels(0, 0, bodyColumns * farmerSpriteWidth, farmerBaseTexture.height);
 
         // Farmer Body Pixels
         Color[] farmerBodyPixels = farmerBaseCustomised.GetPixels(0, 0, bodyColumns * farmerSpriteWidth, farmerBaseTexture.height);
 
-        MergeColourArray(farmerBodyPixels, farmerTrouserPixelsSelection);
+        //MergeColourArray(farmerBodyPixels, farmerTrouserPixelsSelection);
         MergeColourArray(farmerBodyPixels, farmerShirtPixels);
         MergeColourArray(farmerBodyPixels, farmerAdornmentsPixels);
 
