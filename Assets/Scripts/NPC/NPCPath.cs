@@ -27,7 +27,6 @@ public class NPCPath : MonoBehaviour
         // If schedule event is for the same scene as the current NPC scene
         if (npcScheduleEvent.toSceneName == npcMovement.npcCurrentScene)
         {
-            //Debug.Log("BuildPath");
 
             Vector2Int npcCurrentGridPosition = (Vector2Int)npcMovement.npcCurrentGridPosition;
 
@@ -35,8 +34,6 @@ public class NPCPath : MonoBehaviour
             npcScheduleEvent.toGridCoordinate = new GridCoordinate(npcTargetGridPosition.x, npcTargetGridPosition.y);
             // Build path and add movement steps to movement step stack
             NPCManager.Instance.BuildPath(npcScheduleEvent.toSceneName, npcCurrentGridPosition, npcTargetGridPosition, npcMovementStepStack);
-
-
         }
         //// else if the schedule event is for a location in another scene
         //else if (npcScheduleEvent.toSceneName != npcMovement.npcCurrentScene)

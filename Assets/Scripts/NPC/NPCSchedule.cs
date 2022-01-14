@@ -28,18 +28,19 @@ public class NPCSchedule : MonoBehaviour
         switch (sceneName)
         {
             case SceneName.Scene_Bush:
-                int index = Random.Range(0, so_NPCScheduleEventList_Bush.Length - 1);
+                int index = Random.Range(0, so_NPCScheduleEventList_Bush.Length);
                 eventList = so_NPCScheduleEventList_Bush[index];
                 break;
             case SceneName.Scene_Simulator:
-                int ind = Random.Range(0, so_NPCScheduleEventList_Simulation.Length - 1);
+                int ind = Random.Range(0, so_NPCScheduleEventList_Simulation.Length);
+                //Debug.Log(so_NPCScheduleEventList_Simulation.Length);
                 eventList = so_NPCScheduleEventList_Simulation[ind];
                 break;
         }
 
         if(eventList != null)
         {
-            foreach (NPCScheduleEvent npcScheduleEvent in so_NPCScheduleEventList.npcScheduleEventList)
+            foreach (NPCScheduleEvent npcScheduleEvent in eventList.npcScheduleEventList)
             {
                 npcScheduleEventSet.Add(npcScheduleEvent);
             }

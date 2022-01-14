@@ -119,6 +119,7 @@ public class NPCMovement : MonoBehaviour
         //animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
         //animator.runtimeAnimatorController = animatorOverrideController;
         npcMovementAnimationParameterControl = GetComponentsInChildren<NPCMovementAnimationParameters>();
+        npcCurrentScene = SceneControllerManager.Instance.GetCurrentScene();
         // Initialise target world position, target grid position & target scene to current
         npcTargetScene = npcCurrentScene;
         npcTargetGridPosition = npcCurrentGridPosition;

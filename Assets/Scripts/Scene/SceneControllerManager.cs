@@ -103,7 +103,6 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
         faderCanvasGroup.blocksRaycasts = true;
 
         float fadeSpeed = Mathf.Abs(faderCanvasGroup.alpha - finalAlpha) / fadeDuration;
-        Debug.Log(fadeSpeed);
 
         while (!Mathf.Approximately(faderCanvasGroup.alpha, finalAlpha))
         {

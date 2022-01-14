@@ -19,7 +19,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: 2
       y: -23
@@ -33,7 +33,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: -24
       y: 22
@@ -47,7 +47,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: -20
       y: 5
@@ -61,7 +61,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: -20
       y: 5
@@ -75,7 +75,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: -20
       y: 5
@@ -89,7 +89,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: -20
       y: 5
@@ -103,7 +103,7 @@ MonoBehaviour:
     day: 0
     weather: 0
     season: 0
-    toSceneName: 0
+    toSceneName: 3
     toGridCoordinate:
       x: -20
       y: 5

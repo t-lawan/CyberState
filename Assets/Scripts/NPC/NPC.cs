@@ -33,6 +33,8 @@ public class NPC : MonoBehaviour, ISaveable
     {
         ISaveableUniqueID = GetComponent<GenerateGUID>().GUID;
         GameObjectSave = new GameObjectSave();
+        EventHandler.CallNPCHasBeenBornEvent(ISaveableUniqueID);
+
     }
 
     private void Start()
@@ -40,7 +42,15 @@ public class NPC : MonoBehaviour, ISaveable
         // get npc movement component
         npcMovement = GetComponent<NPCMovement>();
         dna = GetComponent<NPCDna>();
-        EventHandler.CallNPCHasBeenBornEvent(ISaveableUniqueID);
+
+    }
+
+    private void Update()
+    {
+        if (dna.isDead)
+        {
+            Die();
+        }
     }
 
     public void ISaveableDeregister()
@@ -54,6 +64,7 @@ public class NPC : MonoBehaviour, ISaveable
 
         if (Mathf.Abs((val + dna.value) / 2) > Settings.reproductionRate)
         {
+            //Debug.Log("Repriduce");
             EventHandler.CallNPCIncubateEvent(dna.value);
             InstatiateItems.Instance.InstatiateHumanoidNPC();
             dna.Mutate();
@@ -64,7 +75,10 @@ public class NPC : MonoBehaviour, ISaveable
 
     public void Die()
     {
+        Debug.Log("Die");
         EventHandler.CallNPCHasDiedEvent(ISaveableUniqueID);
+        Destroy(gameObject);
+           
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

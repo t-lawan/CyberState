@@ -21,6 +21,9 @@ public static class Settings
     //Player
     public static float playerCentreYOffset = 0.875f;
 
+    //NPC
+    public static float maxAge = 4.0f;
+    public static float minAge = 1.0f;
     // NPC Animation Parameters
     public static int walkUp;
     public static int walkDown;
