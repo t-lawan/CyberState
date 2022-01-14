@@ -790,7 +790,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7761194, y: 1}
+    m_SensorSize: {x: 1.7780488, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6363,8 +6363,8 @@ MonoBehaviour:
   inputAdornmentsStyleNo: 2
   inputSkinType: 0
   inputSex: 0
-  inputHairColor: {r: 0.6285606, g: 0.62237453, b: 0.6981132, a: 0}
-  inputTrouserColor: {r: 0.49381453, g: 0.49381453, b: 0.764151, a: 0}
+  inputHairColor: {r: 0.9339623, g: 0.101326115, b: 0.101326115, a: 1}
+  inputTrouserColor: {r: 0.49381453, g: 0.49381453, b: 0.764151, a: 1}
 --- !u!1 &697066090
 GameObject:
   m_ObjectHideFlags: 0

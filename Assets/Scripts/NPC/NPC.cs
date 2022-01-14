@@ -54,7 +54,6 @@ public class NPC : MonoBehaviour, ISaveable
 
         if (Mathf.Abs((val + dna.value) / 2) > Settings.reproductionRate)
         {
-            Debug.Log("REPRODUCE");
             EventHandler.CallNPCIncubateEvent(dna.value);
             InstatiateItems.Instance.InstatiateHumanoidNPC();
             dna.Mutate();

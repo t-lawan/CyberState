@@ -88,8 +88,10 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     private void InstatiateItem(PrefabInstatiateStruct obj, string currentSceneName)
     {
+
         if (ShouldBeCreatedInScene(obj, currentSceneName))
         {
+
             Vector3 itemPosition = GetItemPositionInScene(obj.sceneName);
 
             while (
@@ -124,6 +126,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         //if(SceneControllerManager.Get)
         if(prefabInstatiateStruct.sceneName.ToString() == sceneName)
         {
+            //Debug.Log(prefabInstatiateStruct.sceneName.ToString());
             return true;
         }
 
@@ -249,6 +252,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     private void AfterSceneLoad()
     {
+
         parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParentTransform).transform;
         npcItem = GameObject.FindGameObjectWithTag(Tags.NPCParentTransform).transform;
 
@@ -259,18 +263,21 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
                 if (!sceneBushHasLoaded)
                 {
                     LoadItemsAndNPCs();
+                    sceneBushHasLoaded = true;
                 }
                 break;
             case SceneName.Scene_Astral:
                 if (!sceneAstralHasLoaded)
                 {
                     LoadItemsAndNPCs();
+                    sceneAstralHasLoaded = true;
                 }
                 break;
             case SceneName.Scene_Simulator:
                 if (!sceneSimulationHasLoaded)
                 {
                     LoadItemsAndNPCs();
+                    sceneSimulationHasLoaded = true;
                 }
                 break;
         }

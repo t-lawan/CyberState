@@ -42,7 +42,10 @@ public enum PointOfInterestType
 {
     Exo_Womb,
     Bush_Building,
-    Ore_To_Lube
+    Ore_To_Lube,
+    Pollution_Capture,
+    Simulator_House,
+    Fan_Building
 
 }
 

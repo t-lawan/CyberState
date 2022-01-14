@@ -17,6 +17,11 @@ PrefabInstance:
       propertyPath: _itemCode
       value: 10017
       objectReference: {fileID: 0}
+    - target: {fileID: 4545886268778031749, guid: 7826aeda7eea240b5a5181852fa1d3ad,
+        type: 3}
+      propertyPath: pointOfInterestTypeBush
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5067695555307145251, guid: 7826aeda7eea240b5a5181852fa1d3ad,
         type: 3}
       propertyPath: m_Enabled
