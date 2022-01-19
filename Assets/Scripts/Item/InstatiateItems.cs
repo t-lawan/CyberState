@@ -19,6 +19,8 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
     private Transform npcItem;
     [SerializeField] private SO_GridProperties[] so_GridPropertiesArray = null;
     [SerializeField] private GameObject humanNoidPrefab;
+    [SerializeField] private GameObject ashePrefab;
+    [SerializeField] private GameObject eggPrefab;
     [SerializeField] private int numberOfHumanoids;
     [SerializeField] public Vector3 minPos;
     [SerializeField] public Vector3 maxPos;
@@ -298,6 +300,25 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
             CreateItemInNPCs(humanNoidPrefab, pos);
 
     }
+
+    public void InstatiateAshe(Vector2 pos)
+    {
+        float x = Random.Range(-2.0f, 2.0f);
+        float y = Random.Range(-2.0f, 2.0f);
+        Vector3 position = new Vector3(pos.x + x, pos.y + y, 0);
+
+        CreateItemInSpace(ashePrefab, position);
+    }
+
+    public void InstatiatePlantEgg(Vector2 pos)
+    {
+        float x = Random.Range(-4.0f, 4.0f);
+        float y = Random.Range(-4.0f, 4.0f);
+        Vector3 position = new Vector3(pos.x + x, pos.y + y, 0);
+
+        CreateItemInSpace(eggPrefab, position);
+    }
+
 
     private void InstatiateHumanoidNPCs()
     {

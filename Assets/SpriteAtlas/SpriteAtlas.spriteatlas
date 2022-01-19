@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 10274468
+    totalSpriteSurfaceArea: 10599302
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -1103,6 +1103,8 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 898d91cb190da4b479714f63ae8519e0, type: 3}
   - {fileID: 21300000, guid: bfd5930cb171ad448883f9eca56c9e08, type: 3}
   - {fileID: 21300000, guid: 730e572c78cf0244ca0db36bb8f3af7f, type: 3}
+  - {fileID: 4112356383579328530, guid: 28506c2cb1fb94643b500b4fe23f5b23, type: 3}
+  - {fileID: -9122016740902801177, guid: 28506c2cb1fb94643b500b4fe23f5b23, type: 3}
   - {fileID: 21300078, guid: 73946c4cd19968e4486ca15a2e699ab6, type: 3}
   - {fileID: 21300076, guid: 73946c4cd19968e4486ca15a2e699ab6, type: 3}
   - {fileID: 21300942, guid: 73946c4cd19968e4486ca15a2e699ab6, type: 3}
@@ -1609,12 +1611,22 @@ SpriteAtlas:
   - {fileID: 21300382, guid: 73946c4cd19968e4486ca15a2e699ab6, type: 3}
   - {fileID: 21300000, guid: 2a61f48c8f2dfed4da6f2f8e2485ee15, type: 3}
   - {fileID: 21300000, guid: 90499fac1706de44382ab07f7887e79e, type: 3}
+  - {fileID: -2478361723227028615, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: 1940941662364931779, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: 2801004374482509386, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: 4037700402972332110, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: 1799554779730944909, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: -6353873393733431089, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: 889481868070351430, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: -2343521401646443740, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
+  - {fileID: -1144915598517684078, guid: 4e836afc99fb6480bbfadd341afa8026, type: 3}
   - {fileID: 21300000, guid: b2eff0cde9f776947b747c1a4cc96406, type: 3}
   - {fileID: 21300000, guid: d1488fdd7509cda4f9b89da8bb3c5a68, type: 3}
   - {fileID: -354288524004490963, guid: 432835fd904224c81832b793f3c375d5, type: 3}
   - {fileID: 1845112844557834121, guid: 432835fd904224c81832b793f3c375d5, type: 3}
   - {fileID: 7129203034245968459, guid: 432835fd904224c81832b793f3c375d5, type: 3}
   - {fileID: 527756936996117868, guid: 432835fd904224c81832b793f3c375d5, type: 3}
+  - {fileID: 21300000, guid: ff35185e40efa4b03a36fc815313c08b, type: 3}
   - {fileID: -8087514274745180549, guid: 63a3406e1f8b54c5f943039b622b3261, type: 3}
   - {fileID: 3258843534359535057, guid: 63a3406e1f8b54c5f943039b622b3261, type: 3}
   - {fileID: 8636761148936870109, guid: 63a3406e1f8b54c5f943039b622b3261, type: 3}
@@ -2818,6 +2830,8 @@ SpriteAtlas:
   - GreenCursor
   - farmerHats
   - Acorn
+  - Drone_0
+  - Drone_1
   - customised_farmer_39
   - customised_farmer_38
   - customised_farmer_471
@@ -3324,12 +3338,22 @@ SpriteAtlas:
   - customised_farmer_191
   - Chair
   - Collision Tile Diagonal
+  - CCTV_2
+  - CCTV_3
+  - CCTV_0
+  - CCTV_1
+  - CCTV_6
+  - CCTV_7
+  - CCTV_4
+  - CCTV_5
+  - CCTV_8
   - InventoryHighlight
   - PauseScreenSelectedTab
   - BushTile2_0
   - BushTile2_1
   - BushTile2_2
   - BushTile2_3
+  - Ashe
   - PollutionCapture_14
   - PollutionCapture_11
   - PollutionCapture_10

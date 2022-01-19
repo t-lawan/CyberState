@@ -45,6 +45,7 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
 
     public void Awake()
     {
+        base.Awake();
         bushData = new DataClass();
         simulationData = new DataClass();
         simulationData.numberOfInteractions = 0;
@@ -72,9 +73,51 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
         EventHandler.AfterSceneLoadEvent -= AfterSceneLoadEvent;
 
         EventHandler.DataIncrementNumberOfInteractions -= IncrementNumberOfInteractions;
-        EventHandler.DataIncrementNumberOfSeedsPlanted += IncrementNumberOfSeedsPlanted;
+        EventHandler.DataIncrementNumberOfSeedsPlanted -= IncrementNumberOfSeedsPlanted;
         EventHandler.NPCHasBeenBornEvent -= IncrementNumberOfHumansBorn;
         EventHandler.NPCHasDiedEvent -= IncrementNumberOfHumansDead;
+    }
+
+    public string GetData(DataType dataType)
+    {
+        string text = "";
+        switch (dataType)
+        {
+            case DataType.interactions:
+                text = GetNumberOfInteractions().ToString();
+                break;
+            case DataType.births:
+                text = GetNumberOfHumansBorn().ToString();
+
+                break;
+            case DataType.deaths:
+                text = GetNumberOfHumansDead().ToString();
+
+                break;
+            case DataType.seeds_planted:
+                text = GetNumberOfSeedsPlanted().ToString();
+
+                break;
+        }
+
+
+        return text;
+    }
+
+    private int GetNumberOfInteractions()
+    {
+        int val = 0;
+        switch (sceneName)
+        {
+            case SceneName.Scene_Bush:
+                val = bushData.numberOfInteractions;
+                break;
+            case SceneName.Scene_Simulator:
+                val = simulationData.numberOfInteractions;
+                break;
+        }
+
+        return val;
     }
 
     private void IncrementNumberOfInteractions()
@@ -90,6 +133,23 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
         }
     }
 
+
+    private int GetNumberOfSeedsPlanted()
+    {
+        int val = 0;
+        switch (sceneName)
+        {
+            case SceneName.Scene_Bush:
+                val = bushData.numberOfSeedsPlanted;
+                break;
+            case SceneName.Scene_Simulator:
+                val = simulationData.numberOfSeedsPlanted;
+                break;
+        }
+
+        return val;
+    }
+
     private void IncrementNumberOfSeedsPlanted()
     {
         switch (sceneName)
@@ -103,6 +163,22 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
         }
     }
 
+    private int GetNumberOfHumansBorn()
+    {
+        int val = 0;
+        switch (sceneName)
+        {
+            case SceneName.Scene_Bush:
+                val = bushData.numberOfHumanoidsBorn;
+                break;
+            case SceneName.Scene_Simulator:
+                val = simulationData.numberOfHumanoidsBorn;
+                break;
+        }
+
+        return val;
+    }
+
     private void IncrementNumberOfHumansBorn(string id)
     {
         switch (sceneName)
@@ -112,11 +188,25 @@ public class DataManager : SingletonMonoBehaviour<DataManager>
                 break;
             case SceneName.Scene_Simulator:
                 simulationData.IncrementNumberOfHumansBorn();
-                Debug.Log(simulationData.numberOfHumanoidsBorn);
                 break;
         }
     }
 
+    private int GetNumberOfHumansDead()
+    {
+        int val = 0;
+        switch (sceneName)
+        {
+            case SceneName.Scene_Bush:
+                val = bushData.numberOfHumanoidsDead;
+                break;
+            case SceneName.Scene_Simulator:
+                val = simulationData.numberOfHumanoidsDead;
+                break;
+        }
+
+        return val;
+    }
     private void IncrementNumberOfHumansDead(string id)
     {
         switch (sceneName)

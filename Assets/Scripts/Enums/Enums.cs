@@ -61,6 +61,15 @@ public enum AnimationType
     pickUp
 }
 
+public enum DataType
+{
+    interactions,
+    births,
+    deaths,
+    seeds_planted
+}
+
+
 public enum AnimationName
 {
     idleDown,

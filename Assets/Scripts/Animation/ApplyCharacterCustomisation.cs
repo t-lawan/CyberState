@@ -47,20 +47,20 @@ public class ApplyCharacterCustomisation : MonoBehaviour
     [Range(0, 2)]
     [SerializeField] private int inputHairStyleNo = 0;
 
-    //Select Hat Style
-   [Header("Select Hat Style")]
-   [Range(0, 1)]
-   [SerializeField] private int inputHatStyleNo = 0;
+    // Select Hat Style
+    [Header("Select Hat Style")]
+    [Range(0, 1)]
+    [SerializeField] private int inputHatStyleNo = 0;
 
     // Select Adornments Style
     [Header("Select Adornments Style")]
     [Range(0, 2)]
     [SerializeField] private int inputAdornmentsStyleNo = 0;
 
-    //Select Skin Type
+    // Select Skin Type
     [Header("Select Skin Type")]
-   [Range(0, 3)]
-   [SerializeField] private int inputSkinType = 0;
+    [Range(0, 3)]
+    [SerializeField] private int inputSkinType = 0;
 
     // Select Sex
     [Header("Select Sex: 0=Male, 1=Female")]
@@ -68,10 +68,10 @@ public class ApplyCharacterCustomisation : MonoBehaviour
     [SerializeField] private int inputSex = 0;
 
     // Select Hair Color
-    [SerializeField] private Color inputHairColor;
+    [SerializeField] private Color inputHairColor = Color.black;
 
     // Select Trouser Color
-    [SerializeField] private Color inputTrouserColor;
+    [SerializeField] private Color inputTrouserColor = Color.white;
 
 
     private Facing[,] bodyFacingArray;
@@ -80,17 +80,13 @@ public class ApplyCharacterCustomisation : MonoBehaviour
 
     // Dimensions
     private int bodyRows = 21;
-
     private int bodyColumns = 6;
     private int farmerSpriteWidth = 16;
     private int farmerSpriteHeight = 32;
-
     private int shirtTextureWidth = 9;
     private int shirtTextureHeight = 36;
-
     private int shirtSpriteWidth = 9;
     private int shirtSpriteHeight = 9;
-
     private int shirtStylesInSpriteWidth = 16;
 
     private int hairTextureWidth = 16;
@@ -292,14 +288,14 @@ public class ApplyCharacterCustomisation : MonoBehaviour
         // Farmer Shirt Pixels
         Color[] farmerShirtPixels = farmerBaseShirtsUpdated.GetPixels(0, 0, bodyColumns * farmerSpriteWidth, farmerBaseTexture.height);
         // Farmer Trouser Pixels
-        //Color[] farmerTrouserPixelsSelection = farmerBaseCustomised.GetPixels(288, 0, 96, farmerBaseTexture.height);
+        Color[] farmerTrouserPixelsSelection = farmerBaseCustomised.GetPixels(288, 0, 96, farmerBaseTexture.height);
         // Farmer Adornments Pixels
         Color[] farmerAdornmentsPixels = farmerBaseAdornmentsUpdated.GetPixels(0, 0, bodyColumns * farmerSpriteWidth, farmerBaseTexture.height);
 
         // Farmer Body Pixels
         Color[] farmerBodyPixels = farmerBaseCustomised.GetPixels(0, 0, bodyColumns * farmerSpriteWidth, farmerBaseTexture.height);
 
-        //MergeColourArray(farmerBodyPixels, farmerTrouserPixelsSelection);
+        MergeColourArray(farmerBodyPixels, farmerTrouserPixelsSelection);
         MergeColourArray(farmerBodyPixels, farmerShirtPixels);
         MergeColourArray(farmerBodyPixels, farmerAdornmentsPixels);
 

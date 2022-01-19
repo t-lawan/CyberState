@@ -246,3 +246,40 @@ MonoBehaviour:
     canBeDropped: 1
     canBeEaten: 0
     canBeCarried: 0
+  - itemCode: 10019
+    itemType: 1
+    itemDescription: Ashe
+    itemSprite: {fileID: 21300000, guid: ff35185e40efa4b03a36fc815313c08b, type: 3}
+    itemLongDescription: Lifeforce that powers
+    itemUseGridRadius: 0
+    itemUseRadius: 3
+    isStartingItem: 0
+    canBePickedUp: 1
+    canBeDropped: 1
+    canBeEaten: 0
+    canBeCarried: 1
+  - itemCode: 10020
+    itemType: 9
+    itemDescription: CCTV
+    itemSprite: {fileID: 21300000, guid: ff35185e40efa4b03a36fc815313c08b, type: 3}
+    itemLongDescription: CCTV
+    itemUseGridRadius: 0
+    itemUseRadius: 3
+    isStartingItem: 0
+    canBePickedUp: 0
+    canBeDropped: 1
+    canBeEaten: 0
+    canBeCarried: 0
+  - itemCode: 10021
+    itemType: 11
+    itemDescription: Drone
+    itemSprite: {fileID: 4112356383579328530, guid: 28506c2cb1fb94643b500b4fe23f5b23,
+      type: 3}
+    itemLongDescription: Drone
+    itemUseGridRadius: 0
+    itemUseRadius: 3
+    isStartingItem: 0
+    canBePickedUp: 0
+    canBeDropped: 1
+    canBeEaten: 0
+    canBeCarried: 0
