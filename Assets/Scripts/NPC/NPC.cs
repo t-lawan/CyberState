@@ -75,7 +75,7 @@ public class NPC : MonoBehaviour, ISaveable
 
     public void Die()
     {
-        Debug.Log("Die");
+        //Debug.Log("Die");
         EventHandler.CallNPCHasDiedEvent(ISaveableUniqueID);
         Destroy(gameObject);
            

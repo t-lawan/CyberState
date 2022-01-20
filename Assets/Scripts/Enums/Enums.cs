@@ -28,6 +28,19 @@
     bushMusic = 2020
 }
 
+public enum InstatiateLocation
+{
+    space,
+    inventory
+}
+
+public enum NPCType
+{
+    Humanoid,
+    Egregore,
+    Drone
+}
+
 public enum HarvestActionEffect
 {
     deciduousLeavesFalling,

@@ -55,6 +55,7 @@ public class NPCMovement : MonoBehaviour
 
     [SerializeField] private float npcMinSpeed = 1f;
     [SerializeField] private float npcMaxSpeed = 3f;
+    [SerializeField] private NPCType npcType;
     private bool npcIsMoving = false;
 
     [HideInInspector] public AnimationClip npcTargetAnimationClip;
@@ -597,15 +598,20 @@ public class NPCMovement : MonoBehaviour
 
     private void TriggerMovementAnimationParameterControl(float x, float y)
     {
-        for (int i = 0; i < npcMovementAnimationParameterControl.Length; i++)
+        if(npcMovementAnimationParameterControl != null)
+
         {
-            npcMovementAnimationParameterControl[i].SetAnimationParameters(
-    x, y, isWalking, isRunning, isIdle, isCarrying, toolEffect, isUsingToolRight, isUsingToolLeft, isUsingToolUp, isUsingToolDown,
-isLiftingToolRight, isLiftingToolLeft, isLiftingToolUp, isLiftingToolDown, isPickingRight, isPickingLeft, isPickingUp, isPickingDown,
-isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
-false, false, false, false
-    );
+            for (int i = 0; i < npcMovementAnimationParameterControl.Length; i++)
+            {
+                npcMovementAnimationParameterControl[i].SetAnimationParameters(
+        x, y, isWalking, isRunning, isIdle, isCarrying, toolEffect, isUsingToolRight, isUsingToolLeft, isUsingToolUp, isUsingToolDown,
+    isLiftingToolRight, isLiftingToolLeft, isLiftingToolUp, isLiftingToolDown, isPickingRight, isPickingLeft, isPickingUp, isPickingDown,
+    isSwingingToolRight, isSwingingToolLeft, isSwingingToolUp, isSwingingToolDown,
+    false, false, false, false
+        );
+            }
         }
+
     }
 
     private void SetIdleAnimation()

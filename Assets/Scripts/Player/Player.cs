@@ -613,10 +613,10 @@ public class Player : SingletonMonoBehaviour<Player>
             TimeManager.Instance.TestAdvanceGameDay();
         }
 
-        if (Input.GetKey(KeyCode.S))
-        {
-            SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene_Bush.ToString(), transform.position);
-        }
+        //if (Input.GetKey(KeyCode.S))
+        //{
+        //    SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene_Bush.ToString(), transform.position);
+        //}
     }
 
     private void ResetMovement()

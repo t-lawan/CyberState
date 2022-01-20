@@ -9,6 +9,7 @@ public class PrefabInstatiateStruct
     public int minNumberToInstatiateEachDay;
     public int maxNumberToInstatiateEachDay;
     public SceneName sceneName;
+    public InstatiateLocation location;
 
 }
 
@@ -95,15 +96,23 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         {
 
             Vector3 itemPosition = GetItemPositionInScene(obj.sceneName);
-
-            while (
-                !CanPlaceItem(obj.prefab.GetComponent<Item>(), itemPosition) &&
-                !IsThereAnItemAtTheLocation(obj.prefab, itemPosition)
-                )
+            switch (obj.location)
             {
-                itemPosition = GetItemPositionInScene(obj.sceneName);
+                case InstatiateLocation.space:
+                    while (
+    !CanPlaceItem(obj.prefab.GetComponent<Item>(), itemPosition) &&
+    !IsThereAnItemAtTheLocation(obj.prefab, itemPosition)
+    )
+                    {
+                        itemPosition = GetItemPositionInScene(obj.sceneName);
+                    }
+                    CreateItemInSpace(obj.prefab, itemPosition);
+                    break;
+                case InstatiateLocation.inventory:
+                    InventoryManager.Instance.AddItem(InventoryLocation.player, obj.prefab.GetComponent<Item>());
+                    break;
             }
-            CreateItemInSpace(obj.prefab, itemPosition);
+
         }
     }
 
@@ -184,6 +193,12 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
                         }
                         break;
                     case ItemType.Seed:
+                        if (gridPropertyDetails.canDropItem)
+                        {
+                            canPlaceItem = true;
+                        }
+                        break;
+                    case ItemType.NPC:
                         if (gridPropertyDetails.canDropItem)
                         {
                             canPlaceItem = true;

@@ -19,72 +19,92 @@ MonoBehaviour:
     minNumberToInstatiateEachDay: 4
     maxNumberToInstatiateEachDay: 10
     sceneName: 0
+    location: 0
   - prefab: {fileID: 8282279209120076057, guid: 2a945565fe2964f8a9676d18b64f377a,
       type: 3}
     numberToInstatiateAtBeginning: 100
     minNumberToInstatiateEachDay: 4
     maxNumberToInstatiateEachDay: 10
     sceneName: 0
+    location: 0
   - prefab: {fileID: 5230101591938121987, guid: 36af3ea5278f44697925e0384ee33a3a,
-      type: 3}
-    numberToInstatiateAtBeginning: 2
-    minNumberToInstatiateEachDay: 1
-    maxNumberToInstatiateEachDay: 1
-    sceneName: 0
-  - prefab: {fileID: 8374240619550304167, guid: 072d774ddaa784a9483a1425f8fe6c5b,
       type: 3}
     numberToInstatiateAtBeginning: 4
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
+    location: 1
+  - prefab: {fileID: 8374240619550304167, guid: 072d774ddaa784a9483a1425f8fe6c5b,
+      type: 3}
+    numberToInstatiateAtBeginning: 2
+    minNumberToInstatiateEachDay: 0
+    maxNumberToInstatiateEachDay: 0
+    sceneName: 0
+    location: 0
   - prefab: {fileID: 443475156190310683, guid: 397750ba1b0d44e4f9e35bc020fe12bd, type: 3}
     numberToInstatiateAtBeginning: 40
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
+    location: 0
   - prefab: {fileID: 443475156190310683, guid: 397750ba1b0d44e4f9e35bc020fe12bd, type: 3}
     numberToInstatiateAtBeginning: 40
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 3
+    location: 0
   - prefab: {fileID: 8028603406778761631, guid: 7826aeda7eea240b5a5181852fa1d3ad,
       type: 3}
     numberToInstatiateAtBeginning: 3
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
+    location: 0
   - prefab: {fileID: 867603834473189990, guid: 6f574983bdad2462fa2b3ce39fa764a1, type: 3}
     numberToInstatiateAtBeginning: 2
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
+    location: 1
   - prefab: {fileID: 8306749857398007898, guid: c3f8936fabeed48068fa19e9e86c5f42,
       type: 3}
     numberToInstatiateAtBeginning: 2
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 0
+    location: 0
   - prefab: {fileID: 7513718978808958960, guid: 55082763912bb44199f8a8834b79402a,
       type: 3}
     numberToInstatiateAtBeginning: 2
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 3
+    location: 0
   - prefab: {fileID: 8028603406778761631, guid: 7826aeda7eea240b5a5181852fa1d3ad,
       type: 3}
     numberToInstatiateAtBeginning: 3
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 3
+    location: 0
   - prefab: {fileID: 7949735766327716682, guid: b29d161dfcdd24b64bb167162e508c42,
       type: 3}
     numberToInstatiateAtBeginning: 3
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 3
+    location: 1
   - prefab: {fileID: 3878424097048496866, guid: 3c52f346c00c7441a915e110dafb5e29,
       type: 3}
     numberToInstatiateAtBeginning: 3
     minNumberToInstatiateEachDay: 0
     maxNumberToInstatiateEachDay: 0
     sceneName: 3
+    location: 0
+  - prefab: {fileID: 3878424097048496866, guid: 3c52f346c00c7441a915e110dafb5e29,
+      type: 3}
+    numberToInstatiateAtBeginning: 5
+    minNumberToInstatiateEachDay: 0
+    maxNumberToInstatiateEachDay: 0
+    sceneName: 0
+    location: 0

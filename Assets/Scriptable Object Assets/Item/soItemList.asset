@@ -224,7 +224,8 @@ MonoBehaviour:
   - itemCode: 10017
     itemType: 9
     itemDescription: Pollution Capture Station
-    itemSprite: {fileID: 21300000, guid: ac45825bf5d544d408799d13295d7927, type: 3}
+    itemSprite: {fileID: 4716507331490903142, guid: 63a3406e1f8b54c5f943039b622b3261,
+      type: 3}
     itemLongDescription: Captures the particles that float.
     itemUseGridRadius: 0
     itemUseRadius: 3
@@ -239,7 +240,7 @@ MonoBehaviour:
     itemSprite: {fileID: 8683020101925888318, guid: 81f48bf3d25bc4d9d87610aed8729b85,
       type: 3}
     itemLongDescription: Captures the particles that float.
-    itemUseGridRadius: 0
+    itemUseGridRadius: 3
     itemUseRadius: 3
     isStartingItem: 0
     canBePickedUp: 0
@@ -271,7 +272,7 @@ MonoBehaviour:
     canBeEaten: 0
     canBeCarried: 0
   - itemCode: 10021
-    itemType: 11
+    itemType: 1
     itemDescription: Drone
     itemSprite: {fileID: 4112356383579328530, guid: 28506c2cb1fb94643b500b4fe23f5b23,
       type: 3}
