@@ -16,15 +16,15 @@ MonoBehaviour:
   - soundName: 10
     soundClip: {fileID: 8300000, guid: 093845d14eed7654a8dc2b6b0ed14dfb, type: 3}
     soundDescription: Soft footstep
-    soundPitchRandomVariationMin: 0.9
-    soundPitchRandomVariationMax: 1.1
-    soundVolume: 0.2
+    soundPitchRandomVariationMin: 0.5
+    soundPitchRandomVariationMax: 1.5
+    soundVolume: 0.15
   - soundName: 20
     soundClip: {fileID: 8300000, guid: 093845d14eed7654a8dc2b6b0ed14dfb, type: 3}
     soundDescription: Hard footstep
-    soundPitchRandomVariationMin: 0.9
-    soundPitchRandomVariationMax: 1.1
-    soundVolume: 0.2
+    soundPitchRandomVariationMin: 0.5
+    soundPitchRandomVariationMax: 1.5
+    soundVolume: 0.15
   - soundName: 12
     soundClip: {fileID: 8300000, guid: 70773d5fc64b344768def3261432b738, type: 3}
     soundDescription: Footstep 1
@@ -163,3 +163,15 @@ MonoBehaviour:
     soundPitchRandomVariationMin: 1
     soundPitchRandomVariationMax: 1
     soundVolume: 0.6
+  - soundName: 2030
+    soundClip: {fileID: 8300000, guid: e6bf25ad7365b4d3a893ef1952333fcf, type: 3}
+    soundDescription: 
+    soundPitchRandomVariationMin: 1
+    soundPitchRandomVariationMax: 1
+    soundVolume: 0.6
+  - soundName: 2040
+    soundClip: {fileID: 8300000, guid: a8700513980644bb6818fcf2edfee2d4, type: 3}
+    soundDescription: 
+    soundPitchRandomVariationMin: 0.8
+    soundPitchRandomVariationMax: 1.1
+    soundVolume: 0.4

@@ -26,6 +26,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
     [SerializeField] public Vector3 minPos;
     [SerializeField] public Vector3 maxPos;
     [SerializeField] public Vector2 margin;
+    private SceneName currentSceneName;
 
     private bool sceneBushHasLoaded = false;
     private bool sceneAstralHasLoaded = false;
@@ -57,28 +58,27 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     private void InstantiateSceneItemsEachDay()
     {
-        string currentSceneName = GetSceneString();
+       
 
         for (int i = 0; i < itemPrefabs.prefabInstatiateList.Count; i++)
         {
             int numberToInstatiate = (int)Random.Range(itemPrefabs.prefabInstatiateList[i].minNumberToInstatiateEachDay, itemPrefabs.prefabInstatiateList[i].maxNumberToInstatiateEachDay);
             for (int j = 0; j < numberToInstatiate; j++)
             {
-                InstatiateItem(itemPrefabs.prefabInstatiateList[i], currentSceneName);
+                InstatiateItem(itemPrefabs.prefabInstatiateList[i], currentSceneName.ToString());
             }
         }
     }
 
     private void InstantiateSceneItemsAtStartGame()
     {
-        string currentSceneName = GetSceneString();
 
         //SceneName currentScene = SceneControllerManager.Instance.;
         for (int i = 0; i < itemPrefabs.prefabInstatiateList.Count; i++)
         {
             for (int j = 0; j < itemPrefabs.prefabInstatiateList[i].numberToInstatiateAtBeginning; j++)
             {
-                InstatiateItem(itemPrefabs.prefabInstatiateList[i], currentSceneName);
+                InstatiateItem(itemPrefabs.prefabInstatiateList[i], currentSceneName.ToString());
             }
         }
     }
@@ -89,10 +89,10 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         return currentScene.name;
     }
 
-    private void InstatiateItem(PrefabInstatiateStruct obj, string currentSceneName)
+    private void InstatiateItem(PrefabInstatiateStruct obj, string sceneName)
     {
 
-        if (ShouldBeCreatedInScene(obj, currentSceneName))
+        if (ShouldBeCreatedInScene(obj, sceneName))
         {
 
             Vector3 itemPosition = GetItemPositionInScene(obj.sceneName);
@@ -109,7 +109,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
                     CreateItemInSpace(obj.prefab, itemPosition);
                     break;
                 case InstatiateLocation.inventory:
-                    InventoryManager.Instance.AddItem(InventoryLocation.player, obj.prefab.GetComponent<Item>());
+                    InventoryManager.Instance.AddItem(InventoryLocation.player, obj.prefab.GetComponent<Item>().ItemCode);
                     break;
             }
 
@@ -273,7 +273,7 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
         parentItem = GameObject.FindGameObjectWithTag(Tags.ItemsParentTransform).transform;
         npcItem = GameObject.FindGameObjectWithTag(Tags.NPCParentTransform).transform;
 
-        SceneName currentSceneName = SceneControllerManager.Instance.GetCurrentScene();
+        currentSceneName = SceneControllerManager.Instance.GetCurrentScene();
         switch (currentSceneName)
         {
             case SceneName.Scene_Bush:
@@ -337,9 +337,24 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     private void InstatiateHumanoidNPCs()
     {
-        for (int i = 0; i < numberOfHumanoids; i++)
+        if(currentSceneName != SceneName.Scene_Astral)
         {
-            InstatiateHumanoidNPC();
+            for (int i = 0; i < numberOfHumanoids; i++)
+            {
+                InstatiateHumanoidNPC();
+            }
+        }
+
+    }
+
+    private void InstatiateCowrieShells()
+    {
+        if (currentSceneName == SceneName.Scene_Astral)
+        {
+            for (int i = 0; i < numberOfHumanoids; i++)
+            {
+                //InstatiateHumanoidNPC();
+            }
         }
     }
 }

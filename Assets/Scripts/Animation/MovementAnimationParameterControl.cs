@@ -83,26 +83,15 @@ public class MovementAnimationParameterControl : MonoBehaviour
 
     private void AnimationEventPlayFootstepSound()
     {
-        int val = Random.Range(1, 4);
-        SoundName sound = SoundName.effectFootstepOne;
+        int val = Random.Range(1, 2);
+        SoundName sound = SoundName.effectFootstepHardGround;
         if(val == 1)
         {
-            sound = SoundName.effectFootstepOne;
+            sound = SoundName.effectFootstepHardGround;
         }
         else if(val == 2)
         {
-            sound = SoundName.effectFootstepTwo;
-
-        }
-        else if (val == 3)
-        {
-            sound = SoundName.effectFootstepThree;
-
-        }
-        else if (val == 4)
-        {
-            sound = SoundName.effectFootstepFour;
-
+            sound = SoundName.effectFootstepSoftGround;
         }
         AudioManager.Instance.PlaySound(sound);
     }

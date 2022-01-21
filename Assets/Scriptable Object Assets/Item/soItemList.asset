@@ -99,7 +99,7 @@ MonoBehaviour:
     canBePickedUp: 0
     canBeDropped: 1
     canBeEaten: 0
-    canBeCarried: 1
+    canBeCarried: 0
   - itemCode: 10007
     itemType: 0
     itemDescription: Sentient Plant Egg
@@ -214,8 +214,8 @@ MonoBehaviour:
     itemDescription: Bush House
     itemSprite: {fileID: 21300000, guid: ac45825bf5d544d408799d13295d7927, type: 3}
     itemLongDescription: 
-    itemUseGridRadius: 0
-    itemUseRadius: 3
+    itemUseGridRadius: 3
+    itemUseRadius: 0
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 1
@@ -227,8 +227,8 @@ MonoBehaviour:
     itemSprite: {fileID: 4716507331490903142, guid: 63a3406e1f8b54c5f943039b622b3261,
       type: 3}
     itemLongDescription: Captures the particles that float.
-    itemUseGridRadius: 0
-    itemUseRadius: 3
+    itemUseGridRadius: 3
+    itemUseRadius: 0
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 1
@@ -241,7 +241,7 @@ MonoBehaviour:
       type: 3}
     itemLongDescription: Captures the particles that float.
     itemUseGridRadius: 3
-    itemUseRadius: 3
+    itemUseRadius: 0
     isStartingItem: 0
     canBePickedUp: 0
     canBeDropped: 1

@@ -67,10 +67,10 @@ public class InstructionsPanel : SingletonMonoBehaviour<InstatiateItems>
         switch (sceneName)
         {
             case SceneName.Scene_Bush:
-                text = "The non-aligned countries came together to create a cybernetic state in a remote uninhabited desert";
+                text = "Tend to your plants";
                 break;
             case SceneName.Scene_Astral:
-                text = "The non-aligned countries came together to create a cybernetic state in a remote uninhabited desert";
+                text = "Collect all the cowrie shell";
                 break;
             case SceneName.Scene_Simulator:
                 text = "The non-aligned countries came together to create a cybernetic state in a remote uninhabited desert";

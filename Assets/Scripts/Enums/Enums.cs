@@ -25,7 +25,9 @@
     ambientIndoors1 = 1020,
     musicCalm3 = 2000,
     musicCalm1 = 2010,
-    bushMusic = 2020
+    bushMusic = 2020,
+    astralMusic = 2030,
+    astralBackgroundMusic = 2040
 }
 
 public enum InstatiateLocation

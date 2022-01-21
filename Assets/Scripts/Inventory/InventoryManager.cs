@@ -47,14 +47,14 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 
     public void AddItem(InventoryLocation inventoryLocation, Item item, GameObject gameObjectToDelete)
     {
-        AddItem(inventoryLocation, item);
+        AddItem(inventoryLocation, item.ItemCode);
 
         Destroy(gameObjectToDelete);
     }
 
-    public void AddItem(InventoryLocation inventoryLocation, Item item)
+    public void AddItem(InventoryLocation inventoryLocation, int itemCode)
     {
-        int itemCode = item.ItemCode;
+        
         List<InventoryItem> inventoryList = inventoryLists[(int)inventoryLocation];
         int itemPosition = FindItemInInventory(inventoryLocation, itemCode);
 
@@ -163,10 +163,6 @@ public class InventoryManager : SingletonMonoBehaviour<InventoryManager>
 
         EventHandler.CallInventoryUpdatedEvent(inventoryLocation, inventoryLists[(int)inventoryLocation]);
     }
-
-
-
-
 
     public int FindItemInInventory(InventoryLocation inventoryLocation, int itemCode)
     {

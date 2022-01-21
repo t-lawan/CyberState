@@ -20,14 +20,15 @@ public class Scene_Astral : SingletonMonoBehaviour<Scene_Astral>
         {
             Debug.Log("AllEgregoresActivated");
             egregoesActivated = true;
+            UIManager.Instance.EnableStoryMenu();
         }
     }
 
     public void ActivateEgregore()
     {
         numberOfEgregoresActivated++;
-        Debug.Log("ActivateEgregore");
-        Debug.Log(numberOfEgregoresActivated);
+        UIManager.Instance.EnableStoryMenu();
+
 
     }
 

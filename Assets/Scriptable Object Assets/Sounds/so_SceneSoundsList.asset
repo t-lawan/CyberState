@@ -17,8 +17,8 @@ MonoBehaviour:
     ambientSoundForScene: 1000
     musicForScene: 2020
   - sceneName: 1
-    ambientSoundForScene: 1000
-    musicForScene: 2000
+    ambientSoundForScene: 2040
+    musicForScene: 2030
   - sceneName: 3
     ambientSoundForScene: 1010
-    musicForScene: 2000
+    musicForScene: 2030

@@ -11,12 +11,14 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
     [SerializeField] private float fadeDuration = 1f;
     [SerializeField] private CanvasGroup faderCanvasGroup = null;
     [SerializeField] private Image faderImage = null;
+    private bool isStoryShowing = false;
     public SceneName startSceneName;
 
     public void FadeAndLoadScene(string sceneName, Vector3 spawnPosition)
     {
         if (!isFading)
         {
+            Debug.Log("FadeAndLoadScene");
             StartCoroutine(FadeAndSwitchScenes(sceneName, spawnPosition));
         }
     }
@@ -49,8 +51,11 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
     private IEnumerator FadeAndSwitchScenes(string sceneName, Vector3 spawnPosition)
     {
+        Debug.Log("FadeAndSwitchScenes");
+
         EventHandler.CallBeforeSceneUnloadFadeOutEvent();
         yield return StartCoroutine(Fade(1f));
+        Debug.Log("StartCoroutine");
 
 
         SaveLoadManager.Instance.StoreCurrentSceneData();
@@ -59,9 +64,14 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
         EventHandler.CallBeforeSceneUnloadEvent();
 
+        Debug.Log("CallBeforeSceneUnloadEvent");
+
+
         yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+        Debug.Log("UnloadSceneAsync");
 
         yield return StartCoroutine(LoadSceneAndSetActive(sceneName));
+        Debug.Log("LoadSceneAndSetActive");
 
         EventHandler.CallAfterSceneLoadEvent();
 
@@ -74,9 +84,13 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
 
     private IEnumerator LoadSceneAndSetActive(string sceneName)
     {
+        Debug.Log(sceneName);
+
         yield return SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+        Debug.Log("LoadSceneAsync");
 
         Scene newLoadedScene = SceneManager.GetSceneAt(SceneManager.sceneCount - 1);
+        Debug.Log("GetSceneAt");
 
         SceneManager.SetActiveScene(newLoadedScene);
     }
@@ -116,5 +130,14 @@ public class SceneControllerManager : SingletonMonoBehaviour<SceneControllerMana
         faderCanvasGroup.blocksRaycasts = false;
     }
 
-    
+    public void ShowStoryUI()
+    {
+        isStoryShowing = true;
+    }
+
+    public void HideStoryUI()
+    {
+        isStoryShowing = false;
+    }
+
 }

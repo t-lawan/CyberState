@@ -5,25 +5,32 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
 {
 
     private bool _pauseMenuOn = false;
+    private bool _storyMenuOn = false;
     [SerializeField] private UIInventoryBar uiInventoryBar = null;
     [SerializeField] private PauseMenuInventoryManagement pauseMenuInventoryManagement = null;
     [SerializeField] private GameObject pauseMenu = null;
+    [SerializeField] private GameObject storyMenu = null;
     [SerializeField] private GameObject[] menuTabs = null;
     [SerializeField] private Button[] menuButtons = null;
 
     public bool PauseMenuOn { get => _pauseMenuOn; set => _pauseMenuOn = value; }
+    public bool StoryMenuOn { get => _storyMenuOn; set => _storyMenuOn = value; }
 
     protected override void Awake()
     {
         base.Awake();
 
         pauseMenu.SetActive(false);
+        storyMenu.SetActive(false);
     }
 
     // Update is called once per frame
     private void Update()
     {
+        //EnableStoryMenu();
+
         PauseMenu();
+        StoryMenu();
     }
 
     private void PauseMenu()
@@ -41,6 +48,40 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
                 EnablePauseMenu();
             }
         }
+    }
+
+    private void StoryMenu()
+    {
+        // Toggle pause menu if escape is pressed
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            if (StoryMenuOn)
+            {
+                DisableStoryMenu();
+            }
+            else
+            {
+                EnableStoryMenu();
+            }
+        }
+    }
+
+    public void EnableStoryMenu()
+    {
+        StoryMenuOn = true;
+        storyMenu.SetActive(true);
+        Player.Instance.PlayerInputIsDisabled = true;
+        //Time.timeScale = 0;
+    }
+
+    public void DisableStoryMenu()
+    {
+        StoryMenuOn = false;
+        storyMenu.SetActive(false);
+        Player.Instance.PlayerInputIsDisabled = false;
+        Time.timeScale = 1;
+        SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene_Bush.ToString(), new Vector3(0f,0f,0f));
     }
 
     private void EnablePauseMenu()
