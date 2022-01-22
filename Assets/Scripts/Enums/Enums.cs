@@ -43,6 +43,16 @@ public enum NPCType
     Drone
 }
 
+
+public enum NarrativeType
+{
+    rentism,
+    communism,
+    exterminism,
+    socialism,
+    count
+}
+
 public enum HarvestActionEffect
 {
     deciduousLeavesFalling,
