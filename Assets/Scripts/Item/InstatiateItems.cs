@@ -303,10 +303,10 @@ public class InstatiateItems : SingletonMonoBehaviour<InstatiateItems>
 
     private void LoadItemsAndNPCs()
     {
+        Debug.Log("LoadItemsAndNPCs");
         InstantiateSceneItemsAtStartGame();
         InstatiateHumanoidNPCs();
     }
-
 
     public void InstatiateHumanoidNPC()
     {

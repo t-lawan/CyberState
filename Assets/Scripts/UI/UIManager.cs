@@ -81,7 +81,7 @@ public class UIManager : SingletonMonoBehaviour<UIManager>
         storyMenu.SetActive(false);
         Player.Instance.PlayerInputIsDisabled = false;
         Time.timeScale = 1;
-        SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene_Bush.ToString(), new Vector3(0f,0f,0f));
+        SceneControllerManager.Instance.FadeAndLoadScene(SceneName.Scene_Simulator.ToString(), new Vector3(0f,0f,0f));
     }
 
     private void EnablePauseMenu()

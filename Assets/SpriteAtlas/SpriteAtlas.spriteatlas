@@ -31,7 +31,7 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: cb224dd917591411c962b7a399160f84, type: 3}
-    totalSpriteSurfaceArea: 10599302
+    totalSpriteSurfaceArea: 11017094
     bindAsDefault: 1
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
@@ -287,6 +287,10 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 91f65276bc5344c4d947c88a99364d1b, type: 3}
   - {fileID: 21300000, guid: e26dc0d638731ec47abe9c4b3cae62ac, type: 3}
   - {fileID: 21300000, guid: bae27de6a19db3443894c2350fec9717, type: 3}
+  - {fileID: -5060451031483593622, guid: 6c478217e459a4a57a0f393f9de7b900, type: 3}
+  - {fileID: 2009785288275997778, guid: 6c478217e459a4a57a0f393f9de7b900, type: 3}
+  - {fileID: 6140380128016769530, guid: 6c478217e459a4a57a0f393f9de7b900, type: 3}
+  - {fileID: -4762721518925009748, guid: 6c478217e459a4a57a0f393f9de7b900, type: 3}
   - {fileID: 21300000, guid: 6059ead73ff6548359eb16c888b4227b, type: 3}
   - {fileID: 21300000, guid: 2e92a61802edadc4495e4d901e3a97cb, type: 3}
   - {fileID: 21300002, guid: 2ca5ff28da2eca44183137741145a439, type: 3}
@@ -1749,6 +1753,38 @@ SpriteAtlas:
   - {fileID: 5572829124895612909, guid: 10acdb0f2f8194d91a3f2124ddacc5d5, type: 3}
   - {fileID: 3980945386439611443, guid: 10acdb0f2f8194d91a3f2124ddacc5d5, type: 3}
   - {fileID: 21300000, guid: 88db641f2388c4b06bc4cec2e4bf474e, type: 3}
+  - {fileID: 6933223335694393071, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -1397365509746193196, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 17334880324610018, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 7143828148132578542, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -8186299728689910322, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 7364767379561946811, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -4987229573879477163, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 818433697204119388, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 7591868225199800783, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 3174740000172749308, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 2655803857110052468, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -2961396871861752453, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -2717033803204188961, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 8316314858200970040, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 6122583050134324219, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 1301980698495550940, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -6878932850842707370, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -5750998479089953526, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -8266863679620031733, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -5815133488013185899, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 5818661052790145292, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -4872621163021313545, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -2463700668463398288, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -1144834211054590616, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 3766865763359371942, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 9185315290136886186, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -4060529681369373566, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 4104806012796865313, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -6124715397737624461, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 5588880199808461859, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: -8482852301027147495, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
+  - {fileID: 7303584569058495136, guid: 39ce6c3f641a043c0b329dcc9b0545b8, type: 3}
   - {fileID: 21300000, guid: 2a21c56faaf4afd479c55eda19270d74, type: 3}
   - {fileID: -8889897509666649805, guid: 400e208f8ff6631429ef6ca968c16ad2, type: 3}
   - {fileID: 6224320500644084454, guid: 400e208f8ff6631429ef6ca968c16ad2, type: 3}
@@ -2014,6 +2050,10 @@ SpriteAtlas:
   - CollisionTile
   - Wood
   - farmerShirts
+  - NetworkMesh_1
+  - NetworkMesh_0
+  - NetworkMesh_3
+  - NetworkMesh_2
   - YugoBuildingRight
   - GreenGridCursor
   - customised_accessory_1
@@ -3476,6 +3516,38 @@ SpriteAtlas:
   - bush_house-Sheet_58
   - bush_house-Sheet_59
   - Egregore
+  - DugGround_14
+  - DugGround_15
+  - DugGround_16
+  - DugGround_17
+  - DugGround_10
+  - DugGround_11
+  - DugGround_12
+  - DugGround_13
+  - DugGround_18
+  - DugGround_19
+  - DugGround_30
+  - DugGround_31
+  - DugGround_29
+  - DugGround_28
+  - DugGround_25
+  - DugGround_24
+  - DugGround_27
+  - DugGround_26
+  - DugGround_21
+  - DugGround_20
+  - DugGround_23
+  - DugGround_22
+  - DugGround_9
+  - DugGround_8
+  - DugGround_5
+  - DugGround_4
+  - DugGround_7
+  - DugGround_6
+  - DugGround_1
+  - DugGround_0
+  - DugGround_3
+  - DugGround_2
   - farmerAdornments
   - Cora_8
   - Cora_7

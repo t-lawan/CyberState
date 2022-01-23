@@ -9,7 +9,7 @@ public class Player : SingletonMonoBehaviour<Player>
     private WaitForSeconds afterUseToolAnimationPause;
     private WaitForSeconds afterLiftToolAnimationPause;
     private AnimationOverrides animationOverrides;
-
+    private SpriteRenderer spriteRenderer;
     private GridCursor gridCursor;
     private Cursor cursor;
     // Movement Parameters
@@ -63,6 +63,7 @@ public class Player : SingletonMonoBehaviour<Player>
     private bool _playerInputIsDisabled = false;
     public bool PlayerInputIsDisabled { get => _playerInputIsDisabled; set => _playerInputIsDisabled = value; }
 
+    SceneName scene;
     protected override void Awake()
     {
         base.Awake();
@@ -75,6 +76,82 @@ public class Player : SingletonMonoBehaviour<Player>
 
         characterAttributeCustomisationList = new List<CharacterAttribute>();
         mainCamera = Camera.main;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void OnEnable()
+    {
+        EventHandler.AfterSceneLoadEvent += AfterSceneLoadEvent;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= AfterSceneLoadEvent;
+    }
+
+    private void AfterSceneLoadEvent()
+    {
+        scene = SceneControllerManager.Instance.GetCurrentScene();
+
+        SetSpriteRenderer();
+        ChangeMovementSpeedToRunning();
+    }
+
+    private void ChangeMovementSpeedToRunning()
+    {
+        switch (scene)
+        {
+            case SceneName.Scene_Simulator:
+                movementSpeed = Settings.runningSpeed;
+                break;
+        }
+
+    }
+
+    private void SetSpriteRenderer()
+    {
+        switch (scene)
+        {
+            case SceneName.Scene_Bush:
+                SetPlayerSprites(true);
+                SetMeshSpriteRenderer(false);
+                break;
+            case SceneName.Scene_Simulator:
+                SetPlayerSprites(false);
+                SetMeshSpriteRenderer(true);
+                break;
+        }
+    }
+
+    private void SetMeshSpriteRenderer(bool show)
+    {
+        if (show)
+        {
+            spriteRenderer.color = new Color(255.0f, 255.0f, 255.0f, 255.0f);
+        }
+        else
+        {
+            spriteRenderer.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+        }
+    }
+
+    private void SetPlayerSprites(bool show)
+    {
+        SpriteRenderer[] sprites = gameObject.GetComponentsInChildren<SpriteRenderer>();
+
+        if (show)
+        {
+            foreach(SpriteRenderer sprite in sprites)
+            {
+                sprite.color = new Color(255.0f, 255.0f, 255.0f, 100.0f);
+            }
+        } else
+        {
+            foreach (SpriteRenderer sprite in sprites)
+            {
+                sprite.color = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+            }
+        }
     }
 
     private void Start()
@@ -215,7 +292,10 @@ public class Player : SingletonMonoBehaviour<Player>
             isRunning = false;
             isWalking = true;
             isIdle = false;
-            movementSpeed = Settings.walkingSpeed;
+            if (scene != SceneName.Scene_Simulator)
+            {
+                movementSpeed = Settings.walkingSpeed;
+            }
         }
     }
 

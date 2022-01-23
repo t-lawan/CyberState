@@ -26,12 +26,11 @@ public class UIPurchasePanel : MonoBehaviour
     void Awake()
     {
         SetCurrentScene();
-
     }
     // Start is called before the first frame update
     void Start()
     {
-        SetCurrentScene();
+            SetCurrentScene();
 
             for (int i = 0; i < sprites.Length; i++)
             {
@@ -68,10 +67,11 @@ public class UIPurchasePanel : MonoBehaviour
     private void SetCurrentScene()
     {
         sceneName = SceneControllerManager.Instance.GetCurrentScene();
+        Debug.Log(sceneName.ToString());
         switch (sceneName)
         {
             case SceneName.Scene_Astral:
-                sprites = bushSprites;
+                sprites = simulationSprites;
                 break;
             case SceneName.Scene_Bush:
                 sprites = bushSprites;

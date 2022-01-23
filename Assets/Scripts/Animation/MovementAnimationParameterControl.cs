@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementAnimationParameterControl : MonoBehaviour
 {
     private Animator animator;
-
+    private SceneName scene;
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -14,11 +14,19 @@ public class MovementAnimationParameterControl : MonoBehaviour
     private void OnEnable()
     {
         EventHandler.MovementEvent += SetAnimationParameters;
+        EventHandler.AfterSceneLoadEvent += AfterSceneLoad;
     }
 
     private void OnDisable()
     {
         EventHandler.MovementEvent -= SetAnimationParameters;
+        EventHandler.AfterSceneLoadEvent -= AfterSceneLoad;
+
+    }
+
+    private void AfterSceneLoad()
+    {
+        scene = SceneControllerManager.Instance.GetCurrentScene();
     }
 
     private void SetAnimationParameters(float xInput, float yInput, bool isWalking, bool isRunning, bool isIdle, bool isCarrying,
@@ -83,13 +91,24 @@ public class MovementAnimationParameterControl : MonoBehaviour
 
     private void AnimationEventPlayFootstepSound()
     {
+        switch (scene)
+        {
+            case SceneName.Scene_Bush:
+            case SceneName.Scene_Astral:
+                PlayFootstepSound();
+                break;
+        }
+    }
+
+    private void PlayFootstepSound()
+    {
         int val = Random.Range(1, 2);
         SoundName sound = SoundName.effectFootstepHardGround;
-        if(val == 1)
+        if (val == 1)
         {
             sound = SoundName.effectFootstepHardGround;
         }
-        else if(val == 2)
+        else if (val == 2)
         {
             sound = SoundName.effectFootstepSoftGround;
         }
